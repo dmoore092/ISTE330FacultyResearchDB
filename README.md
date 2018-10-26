@@ -3,7 +3,7 @@ Final Project for ISTE-330
 
 Welcome!
 
-Guide for how to use GitHub
+_Guide for how to use GitHub_
 Note: I'm writing this from the perspective of a Mac/Linux user, from a commandline. It's what I am most familiar with. 
 I will attempt to get the Windows process down as well, but I'm willing to work with people if they are struggling
 
@@ -18,7 +18,7 @@ I will attempt to get the Windows process down as well, but I'm willing to work 
 8. Yay you're done. Now you can work in your favorite IDE, just DONT MOVE THIS FOLDER.
 
 
-Pull, Commit, Push. Here is a standard, basic git workflow
+_Pull, Commit, Push. Here is a standard, basic git workflow_
 1. Open a terminal/Git-For-Windows. Navigate to your git repo folder
 2. Type `git pull`
 3. This will pull down ALL of the repo to your local machine, including the changes other people made while you weren't working.
@@ -30,7 +30,7 @@ Pull, Commit, Push. Here is a standard, basic git workflow
 9. Next you need to push your changes to the remote repo for other people to get.
 10. Type `git commit push`
 
-Conflict. What if git yells at you that there is a merge conflict?
+_Conflict. What if git yells at you that there is a merge conflict?_
 1. When you push, git will yell at you that you are out of sync with the rest of the project.
 2. Reopen the file in question, you will see a very noticable addition of stars surrounding the section with conflicts.
 3. You need to manually fix the problem. Git isn't magic and won't fix merge conflicts for us. You can delete your additions if you aren't sure which one is better, and add it after discussion with the team.
