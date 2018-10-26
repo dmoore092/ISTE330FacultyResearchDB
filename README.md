@@ -1,15 +1,17 @@
 # ISTE330FacultyResearchDB
 Final Project for ISTE-330
 
+Welcome!
+
 Guide for how to use GitHub
 Note: I'm writing this from the perspective of a Mac/Linux user, from a commandline. It's what I am most familiar with. 
-I will attempt to get the windows process down as well, but I'm willing to work with people if they are struggling
+I will attempt to get the Windows process down as well, but I'm willing to work with people if they are struggling
 
 1. Install git. https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 2. log into the github website, navigate to our repo
 3. Click the bright green "Clone or Download" button.
 4. Copy the link.
-5. Open a terminal in mac.
+5. Open a terminal in Mac.
    Open Git-for-Windows/Git Bash in Windows.
 6. Navigate ONE FOLDER UP from where you want the repo to be placed. The cloning process will create a folder on your local machine
 7. Type `git clone https://github.com/dmoore092/ISTE330FacultyResearchDB.git`   (that's our real link btw)
