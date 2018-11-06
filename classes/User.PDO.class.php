@@ -16,6 +16,5 @@
             parent::__construct();
             $this->dbConn = $this->getConn();
         }
-
-        
+	}
 ?>

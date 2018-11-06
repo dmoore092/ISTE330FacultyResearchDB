@@ -18,5 +18,5 @@
             $this->dbConn = $this->getConn();
         }
 
-       
+	}  
 ?>
