@@ -16,7 +16,42 @@
         function __construct(){
             parent::__construct();
             $this->dbConn = $this->getConn();
-        }
+		}
+		
+		/**
+		 * getProjectById() - gets the indicated project by selecting it's ID from the database
+		 */
+		function getProjectById($projectID){
+
+		}
+
+		/**
+		 * getProjectsByFacultyName - gets all the projects associated with the indicated faculty member
+		 */
+		function getProjectsByFacultyName($fName){
+
+		}
+
+		/**
+		 * getProjectsByProjectName - allows a user to search for a specfic project, returns items from the database that may match that project
+		 */
+		function getProjectsByProjectName($pName){
+
+		}
+
+		/**
+		 * inertProject() - inserts a new project into the database
+		 */
+		function insertProject($projectName, $projectLead, $projectDesc, $facultyID){
+
+		}
+
+		/**
+		 * updateProject() - Takes in an associative array where the key is the field name and the value is the value to be updated for that field, then updates them
+		 */
+		function updateProject($updateArray){
+
+		}
 
 	}  
 ?>

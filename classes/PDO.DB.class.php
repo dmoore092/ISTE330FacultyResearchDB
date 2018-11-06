@@ -1,4 +1,9 @@
 <?php
+    /*
+    * DB class contains all of the methods for creating a connection to,
+    * making an object for, and interacting with the Database.
+	* version 11/6/2018
+	*/
     class DB{
         private $dbh;
 
