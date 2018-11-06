@@ -1,5 +1,6 @@
 <?php 
 	class User{
+		private $id;
 		private $username;
 		private $password;
 		private $name;
@@ -12,6 +13,10 @@
 		private $phone;
 		private $email;
 		private $role;
+		
+		public functino getId(){
+			return $this->id;
+		}
 		
 		public function getUsername(){
 			return $this->username;
