@@ -1,0 +1,10 @@
+INSERT INTO project(projectName, projectLead, projectDescription)VALUES('', '', '');
+INSERT INTO project(projectName, projectLead, projectDescription)VALUES('', '', '');
+INSERT INTO project(projectName, projectLead, projectDescription)VALUES('', '', '');
+INSERT INTO project(projectName, projectLead, projectDescription)VALUES('', '', '');
+INSERT INTO project(projectName, projectLead, projectDescription)VALUES('', '', '');
+INSERT INTO project(projectName, projectLead, projectDescription)VALUES('', '', '');
+INSERT INTO project(projectName, projectLead, projectDescription)VALUES('', '', '');
+INSERT INTO project(projectName, projectLead, projectDescription)VALUES('', '', '');
+INSERT INTO project(projectName, projectLead, projectDescription)VALUES('', '', '');
+INSERT INTO project(projectName, projectLead, projectDescription)VALUES('', '', '');

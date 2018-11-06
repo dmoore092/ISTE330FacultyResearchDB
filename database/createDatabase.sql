@@ -3,8 +3,8 @@
 
 USE iste330t01;
 
-DROP TABLE IF EXISTS users;
-CREATE TABLE users(
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(
 id INT AUTO_INCREMENT,
 username VARCHAR(20) NOT NULL,
 password VARCHAR(100) NOT NULL,
@@ -15,7 +15,7 @@ title VARCHAR(40),
 interestArea VARCHAR(50),
 office VARCHAR(20),
 website VARCHAR(50),
-phone VARCHAR(10),
+phone VARCHAR(20),
 email VARCHAR(40),
 role INT,
 CONSTRAINT pk_users PRIMARY KEY(id)
