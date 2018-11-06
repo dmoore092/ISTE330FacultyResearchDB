@@ -16,7 +16,7 @@
 
             }
             catch(PDOException $e){
-                die("Problem Connecting to Server");
+                throw new Exception("Problem Connecting to Server \n" . $e);
             }
         } // construct
 
