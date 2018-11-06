@@ -14,7 +14,7 @@
 		private $email;
 		private $role;
 		
-		public functino getId(){
+		public function getId(){
 			return $this->id;
 		}
 		
