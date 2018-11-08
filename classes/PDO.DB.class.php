@@ -5,7 +5,7 @@
 	* version 11/8/2018
 	*/
     class DB{
-        private $dbh;
+        private $dbConn;
 
         /**
          * __construct() - creates a new PDO database object and opens a connection.
@@ -29,7 +29,7 @@
          * getConn() - Returns the connection object for easy access
          */
         function getConn(){
-            return $this->dbh;
+            return $this->dbConn;
         }
 
         /**
@@ -39,7 +39,7 @@
             $ra = -1;
             try{
                 $query = "UPDATE :table SET :column = :value WHERE id = :id";
-                $stmt = $this->dbh->prepare($query);
+                $stmt = $this->dbConn->prepare($query);
                 $stmt->bindParam(array(
                     ":table"=>$tableName,
                     ":column"=>$fieldName,
@@ -60,7 +60,7 @@
             $ra = -1;
             try{
                 $query = "DELETE FROM :tableName WHERE id = :id";
-                $stmt = $this->dbh->prepare($query);
+                $stmt = $this->dbConn->prepare($query);
                 $stmt->bindParam(array(
                     ":table"=>$tableName,
                     ":id"=>$id
@@ -79,7 +79,7 @@
             $data = array();
             try{
                 $query = "SELECT :fieldName FROM :table WHERE id = :id";
-                $stmt = $this->dbh->prepare($query);
+                $stmt = $this->dbConn->prepare($query);
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
                 $stmt->bindParam(array(
                     ":table"=>$tableName,
@@ -103,7 +103,7 @@
             $data = array();
             try{
                 $query = "SELECT * FROM :table";
-                $stmt = $this->dbh->prepare($query);
+                $stmt = $this->dbConn->prepare($query);
                 $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
                 $stmt->bindParam(":table", $tableName);
                 $stmt->execute();
