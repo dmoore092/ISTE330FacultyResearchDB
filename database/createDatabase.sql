@@ -24,9 +24,9 @@ CONSTRAINT pk_users PRIMARY KEY(id)
 DROP TABLE IF EXISTS project;
 CREATE TABLE project(
 id INT AUTO_INCREMENT,
-projectName VARCHAR(20) NOT NULL,
-projectLead VARCHAR(20) NOT NULL,
-projectDescription VARCHAR(20) NOT NULL,
+projectName VARCHAR(150) NOT NULL,
+projectLead VARCHAR(150) NOT NULL,
+projectDescription VARCHAR(5000) NOT NULL,
 CONSTRAINT pk_project PRIMARY KEY(id)
 );
 
