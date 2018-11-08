@@ -42,8 +42,49 @@
 		 * updateUser() - Takes in an associative array where the key is the field name and the value is the value to be updated for that field, then updates them
 		 */
 		function updateUser($updateArray){
-
+			$id = '';
+            foreach($updateArray as $key=>$val){
+                switch($key){
+                    case "user_username": // case will be the name of the form field the user types in
+                        $id = $val;
+                        break;
+                    case 'user_password':
+                        $this->updateField('user', 'password', $val, $id);
+                        break;
+                    case 'user_name':
+                        $this->updateField('user', 'name', $val, $id);
+                        break;
+                    case 'user_tagline':
+                        $this->updateField('user', 'tagline', $val, $id);
+						break;
+					case 'user_imagepath':
+                        $this->updateField('user', 'imagepath', $val, $id);
+                        break;
+                    case 'user_title':
+                        $this->updateField('user', 'title', $val, $id);
+                        break;
+                    case 'user_interestArea':
+                        $this->updateField('user', 'interestArea', $val, $id);
+						break;		
+					case 'user_office':
+                        $this->updateField('user', 'office', $val, $id);
+                        break;
+                    case 'user_website':
+                        $this->updateField('user', 'website', $val, $id);
+                        break;
+                    case 'user_phone':
+                        $this->updateField('user', 'phone', $val, $id);
+						break;
+					case 'user_email':
+						$this->updateField('user', 'email', $val, $id);
+						break;
+					case 'user_role':
+						$this->updateField('user', 'role', $val, $id);
+						break;
+                }
+            }
 		}
+		//username,password,name,tagline,imagePath,title,interestArea,office,website,phone,email,role
 
 		/**
 		 * login() - Takes in a possible username and password for a given user, checks them against the databas, returns a boolean if the user and password match 
