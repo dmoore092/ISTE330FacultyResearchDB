@@ -21,7 +21,21 @@
 		 * getUsersByRole() - returns an array of users from the database whose role matches that of the specified role
 		 */
 		function getUsersByRole($role){
-
+			try{
+                $data = array();
+                $stmt = $this->dbConn->prepare("select * from user where role = :role"); 
+                $stmt->bindParam("role",$role,PDO::PARAM_INT);    
+                $stmt->execute();
+                $stmt->setFetchMode(PDO::FETCH_CLASS,"User");
+                while($databaseUser = $stmt->fetch()){
+                    $data[] = $databaseUser;
+                }
+                return $data;
+            }
+            catch(PDOException $e){
+                echo $e->getMessage();
+                throw new Exception("Problem getting Project from database.");
+            }
 		}
 
 		/**

@@ -22,21 +22,63 @@
 		 * getProjectById() - gets the indicated project by selecting it's ID from the database
 		 */
 		function getProjectById($projectID){
-
+			try{
+                $data = array();
+                $stmt = $this->dbh->prepare("select * from project where id = :projectID"); 
+                $stmt->bindParam("projectID",$projectID,PDO::PARAM_INT);    
+                $stmt->execute();
+                $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
+                while($databaseProject = $stmt->fetch()){
+                    $data[] = $databaseProject;
+                }
+                return $data;
+            }
+            catch(PDOException $e){
+                echo $e->getMessage();
+                throw new Exception("Problem getting Project from database.");
+            }
 		}
 
 		/**
 		 * getProjectsByFacultyName - gets all the projects associated with the indicated faculty member
 		 */
 		function getProjectsByFacultyName($fName){
-
+			try{
+                $data = array();
+                $stmt = $this->dbh->prepare("select * from project where projectLead = :fName"); 
+                $stmt->bindParam("fName",$fName,PDO::PARAM_STR, 150);    
+                $stmt->execute();
+                $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
+                while($databaseProjects = $stmt->fetch()){
+                    $data[] = $databaseProjects;
+                }
+                return $data;
+            }
+            catch(PDOException $e){
+                echo $e->getMessage();
+                throw new Exception("Problem getting Projects by faculty from database.");
+            }
 		}
 
 		/**
 		 * getProjectsByProjectName - allows a user to search for a specfic project, returns items from the database that may match that project
 		 */
 		function getProjectsByProjectName($pName){
-
+			try{
+                $data = array();
+                $stmt = $this->dbh->prepare("select * from project where projectName = :pName"); 
+                $stmt->bindParam("fName",$fName,PDO::PARAM_STR, 150);    
+                $stmt->execute();
+                $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
+                while($databaseProjects = $stmt->fetch()){
+                    $data[] = $databaseProjects;
+                }
+                return $data;
+            }
+            catch(PDOException $e){
+                echo $e->getMessage();
+                throw new Exception("Problem getting Projects by name from database.");
+            }
 		}
 
 		/**
