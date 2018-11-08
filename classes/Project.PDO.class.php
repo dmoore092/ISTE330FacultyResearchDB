@@ -24,7 +24,7 @@
 		function getProjectById($projectID){
 			try{
                 $data = array();
-                $stmt = $this->dbh->prepare("select * from project where id = :projectID"); 
+                $stmt = $this->dbConn->prepare("select * from project where id = :projectID"); 
                 $stmt->bindParam("projectID",$projectID,PDO::PARAM_INT);    
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
@@ -45,7 +45,7 @@
 		function getProjectsByFacultyName($fName){
 			try{
                 $data = array();
-                $stmt = $this->dbh->prepare("select * from project where projectLead = :fName"); 
+                $stmt = $this->dbConn->prepare("select * from project where projectLead = :fName"); 
                 $stmt->bindParam("fName",$fName,PDO::PARAM_STR, 150);    
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
@@ -66,7 +66,7 @@
 		function getProjectsByProjectName($pName){
 			try{
                 $data = array();
-                $stmt = $this->dbh->prepare("select * from project where projectName = :pName"); 
+                $stmt = $this->dbConn->prepare("select * from project where projectName = :pName"); 
                 $stmt->bindParam("fName",$fName,PDO::PARAM_STR, 150);    
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
@@ -92,7 +92,23 @@
 		 * updateProject() - Takes in an associative array where the key is the field name and the value is the value to be updated for that field, then updates them
 		 */
 		function updateProject($updateArray){
-
+			$id = '';
+            foreach($updateArray as $key=>$val){
+                switch($key){
+                    case "project_id": // case will be the name of the form field the user types in
+                        $id = $val;
+                        break;
+                    case 'project_name':
+                        $this->updateField('project', 'projectName', $val, $id);
+                        break;
+                    case 'project_lead':
+                        $this->updateField('project', 'projectLead', $val, $id);
+                        break;
+                    case 'project_description':
+                        $this->updateField('project', 'projectDescription', $val, $id);
+                        break;
+                }
+            }
 		}
 
 	}  
