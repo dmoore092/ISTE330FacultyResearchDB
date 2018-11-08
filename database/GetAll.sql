@@ -1,0 +1,8 @@
+DROP PROCEDURE IF EXISTS GetAll;
+DELIMITER //
+CREATE PROCEDURE GetAll()
+BEGIN
+SELECT * FROM user u, project p WHERE u.id = p.id;
+END
+//
+DELIMITER ;
