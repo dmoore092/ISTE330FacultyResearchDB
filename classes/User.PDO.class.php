@@ -23,7 +23,7 @@
 		function getUsersByRole($role){
 			try{
                 $data = array();
-                $stmt = $this->dbh->prepare("select * from user where role = :role"); 
+                $stmt = $this->dbConn->prepare("select * from user where role = :role"); 
                 $stmt->bindParam("role",$role,PDO::PARAM_INT);    
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS,"User");
