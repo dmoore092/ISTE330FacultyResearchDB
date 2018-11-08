@@ -100,7 +100,20 @@
          * getEverythingAsObjects() - returns everything in the given table as objects of the given class
          */
         function getEverythingAsObjects($tableName, $className){
-            
+            $data = array();
+            try{
+                $query = "SELECT * FROM :table";
+                $stmt = $this->dbh->prepare($query);
+                $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
+                $stmt->bindParam(":table"=>$tableName);
+                $stmt->execute();
+                while($item = $stmt->fetch()){
+                    $data[] = $item;
+                }
+            }catch(PDOException $e){
+                return "A problem occurred getting everything from the table $tableName";
+            }
+            return $data;
         }
     } // class
 ?>
