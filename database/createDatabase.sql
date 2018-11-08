@@ -26,12 +26,12 @@ CREATE TABLE project(
 id INT AUTO_INCREMENT,
 projectName VARCHAR(150) NOT NULL,
 projectLead VARCHAR(150) NOT NULL,
-projectDescription VARCHAR(5000) NOT NULL,
+projectDescription VARCHAR(500) NOT NULL,
 CONSTRAINT pk_project PRIMARY KEY(id)
 );
 
-DROP TABLE IF EXISTS projectUsers;
-CREATE TABLE projectUsers(
+DROP TABLE IF EXISTS projectUser;
+CREATE TABLE projectUser(
 projectId INT NOT NULL,
 userId INT NOT NULL,
 CONSTRAINT pk_projectUser PRIMARY KEY(projectId, userId),
