@@ -109,5 +109,7 @@
 		public function getRole(){
 			return $this->role;
 		}
+
+		
 	}
 ?>

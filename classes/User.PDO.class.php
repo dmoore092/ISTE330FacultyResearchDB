@@ -91,7 +91,29 @@
 		 * and false if they don't
 		 */
 		function login($username, $password){
+		
+			$login = false;
+			try{
+			//check for username and password
+				$stmt = $this->dbConn->prepare("select username, password from user where username = ? AND password = ?"); 
+				$stmt->bindParam(1,$username,PDO::PARAM_STR);
+				$stmt->bindParam(2,$password,PDO::PARAM_STR);  
+				$stmt->execute();
+				
+				if($stmt->rowCount() == 1){
+					$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+					$_SESSION['username'] = $results['username'];
+					$_SESSION['password'] = $results['password'];
+					$login = true;
+				}
 
+			}
+			catch(PDOException $e)	{
+				echo $e->getMessage();
+                throw new Exception("Invalid login or syntax");
+			}
+			
+			return $login;
 		}
 	} // class
 ?>

@@ -85,7 +85,21 @@
 		 * inertProject() - inserts a new project into the database
 		 */
 		function insertProject($projectName, $projectLead, $projectDesc, $facultyID){
-
+            $ra = -1;
+            try{
+                $query = "INSERT INTO project(:projectName,:projectLead,:projectDesc,:facultyID)";
+                $stmt = $this->dbConn->prepare($query);
+                $stmt->bindParam(array(
+                    ":projectName"=>$projectName,
+                    ":projectLead"=>$projectLead,
+                    ":projectDesc"=>$projectDesc,
+                    ":facultyID"=>$facultyID
+                ));
+                $ra = $stmt->execute();
+            }catch(PDOException $e){
+                return "A problem occurred updating $tableName";
+            }
+            return $ra;
 		}
 
 		/**
