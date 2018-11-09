@@ -25,7 +25,5 @@
     <p>Professors manage all of their own projects with the ability to add, edit, and delete anything within the project or
       the project itself.</p>
   </div>
-
-
 </body>
 </html>
