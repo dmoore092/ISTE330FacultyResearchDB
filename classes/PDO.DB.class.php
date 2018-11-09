@@ -4,9 +4,9 @@
     * retrieving from, updating, deleting from, and inserting into the database.
 	* version 11/8/2018
 	*/
+    
     class DB{
         private $dbConn;
-
         /**
          * __construct() - creates a new PDO database object and opens a connection.
          */
@@ -21,6 +21,7 @@
 
             }
             catch(PDOException $e){
+                echo $e;
                 throw new Exception("Problem Connecting to Server \n" . $e);
             }
         } // construct
