@@ -85,7 +85,6 @@
                 }
             }
 		}
-		//username,password,name,tagline,imagePath,title,interestArea,office,website,phone,email,role
 
 		/**
 		 * login() - Takes in a possible username and password for a given user, checks them against the databas, returns a boolean if the user and password match 

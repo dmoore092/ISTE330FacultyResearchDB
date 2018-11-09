@@ -4,7 +4,6 @@
 <html>
 <head>
   <title>CollaboRIT!</title>
-
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/homeStyle.css">
 </head>
