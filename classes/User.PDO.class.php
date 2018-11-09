@@ -1,6 +1,7 @@
 <?php 
     require_once "PDO.DB.class.php";
-    include "User.class.php";
+	includ
+	 "User.class.php";
 	/*
 	* UserDB class contains all of the methods for using PHP Data Objects to 
 	* interface with the database, specifically in relation to users.
@@ -98,15 +99,19 @@
 
 				$stmt = $this->dbConn->prepare("select username, password from user where username = ? AND password = ?"); 
 				$stmt->bindParam(1, $username, PDO::PARAM_STR);
-				$stmt->bindParam(2, $password, PDO::PARAM_STR);  
+				$stmt->bindParam(2, $hashed_password, PDO::PARAM_STR);  
 				$stmt->execute();
-				$results = $stmt->get_result();
-				$user = $result->fetch_object();
-
-				if (password_verify($hashed_password, $user->password)) {
-					$_SESSION['username'] = $user->username;
-					$login = true;
+				$stmt->setFetchMode(PDO::FETCH_CLASS,"User");
+                while($databaseUser = $stmt->fetch()){
+                    $data[] = $databaseUser;
 				}
+				if(count($data > 0)){
+					$user = $data[0];
+					if (password_verify($hashed_password, $user->password)) {
+						$_SESSION['username'] = $user->username;
+						$login = true;
+					}
+				}	
 			}
 			return $login;
 		}
