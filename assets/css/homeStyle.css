@@ -19,3 +19,8 @@ aside{
     padding-left: 45px;
     border-left: 2px solid orange;
 }
+aside img{
+    width: 85%;
+    margin: auto;
+    margin-bottom: 1em;
+}
