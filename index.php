@@ -4,10 +4,23 @@
 <html>
 <head>
   <title>CollaboRIT!</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/homeStyle.css">
+  <link rel="stylesheet" href="assets/css/icons/foundation-icons.css">
+  <link rel="stylesheet" href="assets/css/foundation.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/homeStyle.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
+<!-- NAVIGATION-->
+<nav class="hover-underline-menu" data-menu-underline-from-center>
+      <ul class="menu align-center">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">My Projects</a></li>
+          <li><a href="#">Find Projects</a></li>
+          <li><a href="#">My Info</a></li>
+          <li><a href="#">Login</a></li>
+      </ul>
+  </nav>
 <h1 class="title">Welcome to Team Mongoose!</h1>
   <div class="welcomeInfo">
     <p>Here, you'll be able to find ongoing projects that IST Professors create, lead,
@@ -25,5 +38,12 @@
     <p>Professors manage all of their own projects with the ability to add, edit, and delete anything within the project or
       the project itself.</p>
   </div>
+
+    <script src="assets/scripts/vendor/jquery.js"></script>
+    <script src="assets/scripts/vendor/what-input.js"></script>
+    <script src="assets/scripts/vendor/foundation.js"></script>
+    <script src="assets/scripts/app.js"></script>
+    <script>$("[data-menu-underline-from-center] a").addClass("underline-from-center");</script>
+
 </body>
 </html>
