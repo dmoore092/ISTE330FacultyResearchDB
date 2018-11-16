@@ -10,6 +10,7 @@ body {
 
 .hover-underline-menu .menu {
   background-color: #F38F08;
+  box-shadow: 0px 4px 5px #c7c7c7;
 }
 
 .hover-underline-menu .menu a {
