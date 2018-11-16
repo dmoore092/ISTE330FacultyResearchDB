@@ -1,5 +1,40 @@
 body {
     margin: 0 auto;
-    font-weight: Helvetica;
+    /* font-weight: Helvetica;
+     */
+     font-family: sans-serif;
   }
+.hover-underline-menu {
+  width: 100%;
+}
+
+.hover-underline-menu .menu {
+  background-color: #F38F08;
+}
+
+.hover-underline-menu .menu a {
+  color: #000000;
+  font-weight: 600;
+  padding: 1.2rem 1.5rem;
+}
+
+.hover-underline-menu .menu .underline-from-center {
+  position: relative;
+}
+
+.hover-underline-menu .menu .underline-from-center::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 0.125rem);
+  border-bottom: 0.125rem solid rgb(0, 0, 0);
+  left: 50%;
+  right: 50%;
+  transition: all 0.5s ease;
+}
+
+.hover-underline-menu .menu .underline-from-center:hover::after {
+  left: 0;
+  right: 0;
+  transition: all 0.5s ease;
+}
   
