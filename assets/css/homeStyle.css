@@ -6,4 +6,16 @@
   .welcomeInfo {
     margin: 1em 2em;
   }
-  
+main{
+    display: flex;
+}
+#welcome-info{
+    width: 90vw;
+    padding: 0 25px 0 25px;
+}
+aside{
+    width: 35vw;
+    margin: auto;
+    padding-left: 45px;
+    border-left: 2px solid orange;
+}
