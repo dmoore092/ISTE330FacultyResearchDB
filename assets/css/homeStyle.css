@@ -12,6 +12,7 @@ main{
 #welcome-info{
     width: 90vw;
     padding: 0 25px 0 25px;
+    margin-top: 40px;
 }
 aside{
     width: 35vw;
@@ -23,4 +24,7 @@ aside img{
     width: 85%;
     margin: auto;
     margin-bottom: 1em;
+}
+aside h3{
+    margin-top: 40px;
 }
