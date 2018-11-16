@@ -12,7 +12,8 @@
     
         <main>
             <div id="welcome-info">
-                <h1 class="title">Welcome to Team Mongoose!</h1>
+                <h1 class="title">CollaboRIT- Home of Team Mongoose!</h1>
+                <h3></h3>
                 <p>
                     Here, you'll be able to find ongoing projects that IST Professors create, lead, and guide collaborating students toward achieving the final product. Projects can be found by going to the <a href="findProject.php">Find Projects</a> page and browsing through the list of current projects. There, you will be able to see the Professor leading the project, their contact information, and some details about the project.
                 </p>
