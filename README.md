@@ -17,6 +17,7 @@ I will attempt to get the Windows process down as well, but I'm willing to work 
 6. Navigate ONE FOLDER UP from where you want the repo to be placed. The cloning process will create a folder on your local machine
 7. Type `git clone https://github.com/dmoore092/ISTE330FacultyResearchDB.git`   (that's our real link btw)
 8. Yay you're done. Now you can work in your favorite IDE, just DONT MOVE THIS FOLDER.
+9. Note: You will be automatically placed onto the "development" branch. You CAN change this in your local git settings, but it is not recommended. Just push to development and we will handle merge with master from the github website.
 
 
 __Pull, Commit, Push. Here is a standard, basic git workflow__

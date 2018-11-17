@@ -1,0 +1,30 @@
+.title {
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .welcomeInfo {
+    margin: 1em 2em;
+  }
+main{
+    display: flex;
+}
+#welcome-info{
+    width: 90vw;
+    padding: 0 25px 0 25px;
+    margin-top: 5em;
+}
+aside{
+    width: 35vw;
+    margin: auto;
+    padding-left: 45px;
+    border-left: 2px solid orange;
+}
+aside img{
+    width: 85%;
+    margin: auto;
+    margin-bottom: 1em;
+}
+aside h3{
+    margin-top: 3em;
+}
