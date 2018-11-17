@@ -1,0 +1,5 @@
+SetEnv DB iste330t01
+SetEnv DB_SERVER localhost 
+SetEnv DB_PASSWORD rushoften
+SetEnv DB_USER iste330t01
+
