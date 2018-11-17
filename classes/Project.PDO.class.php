@@ -127,6 +127,7 @@
 
         function getProjectsAsTable($editable=false){
             $data = $this->getEverythingAsObjects('project', "Project");
+
             if(count($data) > 0){
                 $html = "<table>\n";
                 if($editable){
@@ -152,7 +153,7 @@
                             <td>{$project->getId()}</td>
                             <td>{$project->getProjectName()}</td>
                             <td>{$project->getProjectLead()}</td>
-                            <td>{$player->getDescription()}</td>
+                            <td>{$project->getDescription()}</td>
                         </tr>";
                     }
                 }
