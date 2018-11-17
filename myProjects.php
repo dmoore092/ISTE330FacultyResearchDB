@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="css/homeStyle.css">
 </head>
 <body>
+    <?php
+        include_once 'assets/inc/nav.php';
+    ?>
 <h1 class="title">My Projects</h1>
 
 
