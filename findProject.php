@@ -10,7 +10,7 @@
 
   echo "<h1 class='title'>Find Projects</h1>";
 
-  if($_SESSION['loggedIn']){
+  if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
 
     switch($_SESSION['role']){
       case 1:
