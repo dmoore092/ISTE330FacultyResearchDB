@@ -154,6 +154,7 @@
                             <td>{$project->getProjectLead()}</td>
                             <td>{$player->getDescription()}</td>
                         </tr>";
+                    }
                 }
                 $html .= "</table>";
             }else{
