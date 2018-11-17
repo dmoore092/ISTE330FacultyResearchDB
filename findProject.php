@@ -26,7 +26,6 @@
   }else{
     echo "<p>I am a member of the general public.</p>";
     echo $projectDB->getProjectsAsTable();
-    var_dump($projectDB);
   }
 
 ?>
