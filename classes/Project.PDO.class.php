@@ -152,7 +152,7 @@
                             <td>{$project->getId()}</td>
                             <td>{$project->getProjectName()}</td>
                             <td>{$project->getProjectLead()}</td>
-                            <td>{$player->getDescription()}</td>
+                            <td>{$project->getDescription()}</td>
                         </tr>";
                     }
                 }
