@@ -125,5 +125,41 @@
             }
 		}
 
+        function getProjectsAsTable($editable=false){
+            $data = $this->getEverythingAsObjects("project", "Project");
+            if(count($data) > 0){
+                $html = "<table>\n";
+                if($editable){
+                    $html .= "<tr><th>ID</th><th>Project Name</th><th>Project Lead</th><th>Project Description</th><th></th></tr>";
+                    foreach($data as $project){
+                        $html .= "<form action= 'findProject.php' method='post'>
+                        <tr>
+                            <input type='hidden' name='project_id' value='{$project->getId()}'/>
+                            <td><input type='text' name='project_id' value='{$project->getId()}' readonly='readonly' size='3'/></td>
+                            <td><input type='text' name='player_first_name' placeholder='{$project->getProjectName()}'/></td>
+                            <td><input type='text' name='player_last_name' placeholder='{$project->getProjectLead()}'/></td>
+                            <td><input type='text' name='player_jersey_num' placeholder='{$player->getDescription()}'/></td>
+                            <td>
+                                <input type='submit' name='updateProject' value='Update'/>
+                                <input type='submit' name='deleteProject' value='Delete'/>
+                            </td>
+                        </tr></form>\n";
+                    }
+                }else{
+                    $html .= "<tr><th>ID</th><th>Project Name</th><th>Project Lead</th><th>Project Description</th></tr>";
+                    foreach($data as $project){
+                        $html .= "<tr>
+                            <td>{$project->getId()}</td>
+                            <td>{$project->getProjectName()}</td>
+                            <td>{$project->getProjectLead()}</td>
+                            <td>{$player->getDescription()}</td>
+                        </tr>";
+                }
+                $html .= "</table>";
+            }else{
+                $html = "<p>No projects exist.</p>";
+            }
+            return $html;
+        }
 	}  
 ?>
