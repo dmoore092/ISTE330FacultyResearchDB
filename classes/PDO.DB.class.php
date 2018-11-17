@@ -104,7 +104,7 @@
 	    include_once("$className.class.php");
             $data = array();
             try{
-                $query = "SELECT * FROM $tablename";
+                $query = "SELECT * FROM $tableName";
                 $stmt = $this->dbConn->prepare($query);
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
