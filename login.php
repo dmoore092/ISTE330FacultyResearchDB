@@ -1,6 +1,15 @@
 <?php
+  session_name("user");
+  if(!isset($_SESSION)) {
+    session_start();
+  }
+
   include "User.PDO.class.php";
   include_once 'assets/inc/nav.php';
+
+  if($_SESSION['loggedIn'] == true) {
+    header("Location: ./myProjects.php");
+  }
 
   if(isset($_POST["username"]) && isset($_POST['password'])) {
     $username = $_POST["username"];
