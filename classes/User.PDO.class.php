@@ -1,7 +1,8 @@
 <?php 
     require_once "PDO.DB.class.php";
-	
+
 	include("User.class.php");
+
 	/*
 	* UserDB class contains all of the methods for using PHP Data Objects to 
 	* interface with the database, specifically in relation to users.
@@ -91,6 +92,7 @@
 		 * and false if they don't
 		 */
 		function login($username, $password){
+			session_name("user");
 			session_start();
 			$login = false;
 
@@ -110,6 +112,10 @@
 					if (password_verify($hashed_password, $user->password)) {
 						$_SESSION['username'] = $user->username;
 						$login = true;
+					}
+					if ($login) {
+						$_SESSION['role'] = $user->getRole();
+						$_SESSION['loggedIn'] = true;
 					}
 				}	
 			}
