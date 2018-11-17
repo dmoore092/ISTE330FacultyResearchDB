@@ -1,10 +1,8 @@
 <?php
-
+include("PDO.DB.class.php")
 echo "test";
 
 $db = new DB;
-
-echo $db->getConn();
 
 
 ?>
