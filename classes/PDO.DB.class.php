@@ -112,7 +112,6 @@
                     $data[] = $item;
                 }
             }catch(PDOException $e){
-		var_dump($e);
                 return "A problem occurred getting everything from the table $tableName";
             }
             return $data;
