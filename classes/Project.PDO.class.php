@@ -126,7 +126,6 @@
 		}  
         function getProjectsAsTable($editable=false){
             $data = $this->getEverythingAsObjects("project", "Project");
-            var_dump($data);
             if(count($data) > 0){
                 $html = "<table>\n";
                 if($editable){
