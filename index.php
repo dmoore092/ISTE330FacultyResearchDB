@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -11,16 +9,9 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
-<!-- NAVIGATION-->
-<nav class="hover-underline-menu" data-menu-underline-from-center>
-      <ul class="menu align-center">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">My Projects</a></li>
-          <li><a href="#">Find Projects</a></li>
-          <li><a href="#">My Info</a></li>
-          <li><a href="#">Login</a></li>
-      </ul>
-  </nav>
+    <?php
+        include 'assets/inc/nav.php';
+    ?>
     <main>
         <div id="welcome-info">
             <h1 class="title">CollaboRIT- Home of Team Mongoose!</h1>

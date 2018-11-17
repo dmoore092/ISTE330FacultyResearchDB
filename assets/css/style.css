@@ -6,6 +6,7 @@ body {
   }
 .hover-underline-menu {
   width: 100%;
+  position: fixed;
 }
 
 .hover-underline-menu .menu {
