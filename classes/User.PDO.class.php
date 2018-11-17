@@ -1,7 +1,7 @@
 <?php 
     require_once "PDO.DB.class.php";
-	includ
-	 "User.class.php";
+	
+	include "User.class.php";
 	/*
 	* UserDB class contains all of the methods for using PHP Data Objects to 
 	* interface with the database, specifically in relation to users.
