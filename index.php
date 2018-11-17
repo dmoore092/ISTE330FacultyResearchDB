@@ -27,9 +27,9 @@
         </div><!--End of #welcomeInfo -->
         <aside>
             <h3>Research Highlights</h3>
-            <img src="https://fakeimg.pl/200/">
-            <img src="https://fakeimg.pl/200/">
-            <img src="https://fakeimg.pl/200/">
+            <img src="assets/media/images/research1.jpg">
+            <img src="assets/media/images/research2.jpg">
+            <img src="assets/media/images/research3.jpg">
         </aside>
     </main>
         <script src="assets/scripts/vendor/jquery.js"></script>
