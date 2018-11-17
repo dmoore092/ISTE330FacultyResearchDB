@@ -105,9 +105,9 @@
             try{
                 $query = "SELECT * FROM :table";
                 $stmt = $this->dbConn->prepare($query);
-                $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
                 $stmt->bindParam(":table", $tableName);
                 $stmt->execute();
+                $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
                 while($item = $stmt->fetch()){
                     $data[] = $item;
                 }
