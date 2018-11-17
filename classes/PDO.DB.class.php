@@ -13,11 +13,11 @@
         function __construct(){
             try{
                 // open a connection
-                $this->dbconn = new PDO("mysql:host={$_SERVER['DB_SERVER']};dbname={$_SERVER['DB']}",
+                $this->dbConn = new PDO("mysql:host={$_SERVER['DB_SERVER']};dbname={$_SERVER['DB']}",
                     $_SERVER['DB_USER'],$_SERVER['DB_PASSWORD']);
 
                 // Change the error reporting for development
-                $this->dbconn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                $this->dbConn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
             }
             catch(PDOException $e){
