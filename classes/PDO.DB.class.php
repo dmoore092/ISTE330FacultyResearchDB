@@ -101,6 +101,7 @@
          * getEverythingAsObjects() - returns everything in the given table as objects of the given class
          */
         function getEverythingAsObjects($tableName, $className){
+	    include_once("classes/{$className}.class.php");
             $data = array();
             try{
                 $query = "SELECT * FROM :table";
