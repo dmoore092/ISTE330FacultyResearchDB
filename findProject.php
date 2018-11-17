@@ -6,7 +6,7 @@
   include_once "assets/inc/nav.php";
   echo "<h1 class='title'>Find Projects</h1>";
 
-  if($_SESSION['loggedIn']){
+  if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
 
     switch($_SESSION['role']){
       case 1:
@@ -19,7 +19,7 @@
 
   }else{
     echo "<p>I am a member of the general public.</p>";
-
+    echo $projectDB->getProjectsAsTable();
   }
 
 ?>

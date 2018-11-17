@@ -13,11 +13,11 @@
         function __construct(){
             try{
                 // open a connection
-                $this->dbh = new PDO("mysql:host={$_SERVER['DB_SERVER']};dbname={$_SERVER['DB']}",
+                $this->dbConn = new PDO("mysql:host={$_SERVER['DB_SERVER']};dbname={$_SERVER['DB']}",
                     $_SERVER['DB_USER'],$_SERVER['DB_PASSWORD']);
 
                 // Change the error reporting for development
-                $this->dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                $this->dbConn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
             }
             catch(PDOException $e){
@@ -101,13 +101,13 @@
          * getEverythingAsObjects() - returns everything in the given table as objects of the given class
          */
         function getEverythingAsObjects($tableName, $className){
+	    include_once("$className.class.php");
             $data = array();
             try{
-                $query = "SELECT * FROM :table";
+                $query = "SELECT * FROM $tableName";
                 $stmt = $this->dbConn->prepare($query);
-                $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
-                $stmt->bindParam(":table", $tableName);
                 $stmt->execute();
+                $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
                 while($item = $stmt->fetch()){
                     $data[] = $item;
                 }
