@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-        include 'assets/inc/nav.php';
+        include_once 'assets/inc/nav.php';
     ?>
     <main>
         <div id="welcome-info">
