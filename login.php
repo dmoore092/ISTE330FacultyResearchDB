@@ -42,7 +42,7 @@
     <label for="sign-in-form-username">Username</label>
     <input type="text" class="sign-in-form-username" id="sign-in-form-username" name="username">
     <label for="sign-in-form-password">Password</label>
-    <input type="text" class="sign-in-form-password" id="sign-in-form-password" name="password">
+    <input type="password" class="sign-in-form-password" id="sign-in-form-password" name="password">
     <button type="submit" class="sign-in-form-button">Login</button>
     <p class="text-center"><a href="#">Forgot your password?</a></p>
     <p class="text-center"><a href="#">Create Account</a></p>
