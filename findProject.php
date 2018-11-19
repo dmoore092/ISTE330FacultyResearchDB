@@ -32,7 +32,8 @@
 <html>
 <head>
   <title>Find Projects</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/findProjectStyle.css">
 </head>
 <body>
 
