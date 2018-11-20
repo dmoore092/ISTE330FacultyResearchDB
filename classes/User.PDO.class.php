@@ -103,6 +103,7 @@
 				if(count($data == 1)){
 					var_dump($data);
 					$user = $data[0];
+					var_dump($hashed_password);
 					if(password_verify($user->getPassword(), $hashed_password)) {
 						$_SESSION['username'] = $user->getUsername();
 						$_SESSION['role'] = $user->getRole();
