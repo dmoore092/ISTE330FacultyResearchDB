@@ -102,8 +102,8 @@
 				}
 				if(count($data == 1)){
 					$user = $data[0];
-					if (password_verify($hashed_password, $user->password)) {
-						$_SESSION['username'] = $user->username;
+					if (password_verify($hashed_password, $user->getPassword())) {
+						$_SESSION['username'] = $user->getUsername();
 						$_SESSION['role'] = $user->getRole();
 						$_SESSION['loggedIn'] = true;
 					}
