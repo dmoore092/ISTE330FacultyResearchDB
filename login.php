@@ -35,7 +35,7 @@
 //    function validateForm() {
       console.log();
       if("<?php echo $isLoggedIn ?>" == "0") {
-          document.getElementById("feedbackUsername").setAttribute("style", "display:block");
+          document.getElementById("feedbackUsername").style.display = "block";
           //document.getElementById("feedbackPassword").setAttribute("style", "display:block");
       }
 
