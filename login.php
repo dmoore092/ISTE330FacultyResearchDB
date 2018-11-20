@@ -6,7 +6,7 @@
   include_once 'assets/inc/nav.php';
 
   //set it as false first
-  $isLoggedIn = 0;
+  $isLoggedIn = -1;
 
   if(isset($_POST["login"])){
     $username = $_POST["username"];
