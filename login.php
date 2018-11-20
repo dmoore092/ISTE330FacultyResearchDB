@@ -10,7 +10,7 @@
     $password = $_POST["password"];
     $user = new UserDB();
     //user will equals (0 || false) || (1 || true)
-    $user->login($username, $password);
+    $isLoggedIn = $user->login($username, $password);
   }
 
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
@@ -30,8 +30,7 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <script>
 //    function validateForm() {
-      //could do this
-      var isLoggedIn = "<?php echo $user ?>";
+      var isLoggedIn = "<?php echo $isLoggedIn ?>";
       console.log(isLoggedIn);
       if(isLoggedIn == "0") {
         if (username == "" || username ==  undefined) {
