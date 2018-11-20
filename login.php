@@ -4,7 +4,7 @@
     session_start();
   }
 
-  include "User.PDO.class.php";
+  include "classes/User.PDO.class.php";
   include_once 'assets/inc/nav.php';
 
   if($_SESSION['loggedIn'] == true) {
