@@ -101,6 +101,7 @@
                     $data[] = $databaseUser;
 				}
 				if(count($data == 1)){
+					var_dump($data);
 					$user = $data[0];
 					if (password_verify($hashed_password, $user->getPassword())) {
 						$_SESSION['username'] = $user->getUsername();
