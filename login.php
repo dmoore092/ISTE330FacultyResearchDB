@@ -31,7 +31,9 @@
   <script>
 //    function validateForm() {
       //could do this
-      if("<?php echo $user; ?>" == "0") {
+      var isLoggedIn = "<?php echo $user ?>";
+      console.log(isLoggedIn);
+      if(isLoggedIn == "0") {
         if (username == "" || username ==  undefined) {
           document.getElementById("feedbackUsername").setAttribute("style", "display:block");
         }
