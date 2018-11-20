@@ -32,7 +32,9 @@
 <html>
 <head>
   <title>Find Projects</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <?php
+    include_once 'assets/inc/header.php';
+  ?>
   <link rel="stylesheet" href="assets/css/findProjectStyle.css">
 </head>
 <body>

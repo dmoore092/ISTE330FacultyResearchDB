@@ -4,9 +4,9 @@
 <html>
 <head>
   <title>My Projects</title>
-
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/homeStyle.css">
+  <?php
+    include_once 'assets/inc/header.php';
+  ?>
 </head>
 <body>
     <?php

@@ -9,11 +9,10 @@
 <html>
 <head>
   <title>CollaboRIT!</title>
-  <link rel="stylesheet" href="assets/css/icons/foundation-icons.css">
-  <link rel="stylesheet" href="assets/css/foundation.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <?php
+    include_once 'assets/inc/header.php';
+  ?>
   <link rel="stylesheet" href="assets/css/homeStyle.css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
     <?php
