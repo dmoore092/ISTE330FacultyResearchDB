@@ -1,3 +1,10 @@
+<?php
+    session_name("user");
+    if(!isset($_SESSION)) {
+      session_start();
+      $_SESSION['loggedIn'] == false;
+    }
+?>
 <!DOCTYPE HTML>
 <html>
 <head>

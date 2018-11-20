@@ -2,6 +2,7 @@
   session_name("user");
   if(!isset($_SESSION)) {
     session_start();
+    $_SESSION['loggedIn'] == false;
   }
 
   include "classes/User.PDO.class.php";
