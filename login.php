@@ -31,33 +31,6 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/loginStyle.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  <script>
-//    function validateForm() {
-      console.log();
-      if("<?php echo $isLoggedIn ?>" == "0") {
-          document.getElementById("feedbackUsername").style.display = "block";
-          //document.getElementById("feedbackPassword").setAttribute("style", "display:block");
-      }
-
-
-
-    // var username = document.forms["loginForm"]["username"].value;
-    // var password = document.forms["loginForm"]["password"].value;
-    
-    // if (username == "" || username ==  undefined) {
-    //   document.getElementById("feedbackUsername").setAttribute("style", "display:block");
-    //   return false;
-    // }
-
-    // if (password == "" || password == undefined) {
-    //   document.getElementById("feedbackPassword").setAttribute("style", "display:block");
-
-    //   return false;
-    // }
-    
-    // return true;
-
-  </script>
 </head>
 <body>
   <h1 class="title">CollaboRIT</h1>
@@ -88,7 +61,32 @@
     <p class="text-center"><a href="#">Create Account</a></p>
   </div>
 </form>
+<script>
+//    function validateForm() {
+      if("<?php echo $isLoggedIn ?>" == "0") {
+          document.getElementById("feedbackUsername").style.display = "block";
+          //document.getElementById("feedbackPassword").setAttribute("style", "display:block");
+      }
 
+
+
+    // var username = document.forms["loginForm"]["username"].value;
+    // var password = document.forms["loginForm"]["password"].value;
+    
+    // if (username == "" || username ==  undefined) {
+    //   document.getElementById("feedbackUsername").setAttribute("style", "display:block");
+    //   return false;
+    // }
+
+    // if (password == "" || password == undefined) {
+    //   document.getElementById("feedbackPassword").setAttribute("style", "display:block");
+
+    //   return false;
+    // }
+    
+    // return true;
+
+  </script>
 
   <script src="assets/scripts/vendor/jquery.js"></script>
   <script src="assets/scripts/vendor/what-input.js"></script>
