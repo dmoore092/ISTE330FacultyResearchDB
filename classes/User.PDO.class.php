@@ -92,34 +92,22 @@
 		 * and false if they don't
 		 */
 		function login($username, $password){
-			session_name("user");
-			session_start();
-			$login = false;
-
-			if(isset($_POST['username']) && isset($_POST['password'])) {
 				$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-				$stmt = $this->dbConn->prepare("select username, password from user where username = ? AND password = ?"); 
+				$stmt = $this->dbConn->prepare("select username, password from user where username = ?"); 
 				$stmt->bindParam(1, $username, PDO::PARAM_STR);
-				$stmt->bindParam(2, $hashed_password, PDO::PARAM_STR);  
 				$stmt->execute();
 				$stmt->setFetchMode(PDO::FETCH_CLASS,"User");
                 while($databaseUser = $stmt->fetch()){
                     $data[] = $databaseUser;
 				}
-				if(count($data > 0)){
+				if(count($data == 1)){
 					$user = $data[0];
 					if (password_verify($hashed_password, $user->password)) {
 						$_SESSION['username'] = $user->username;
-						$login = true;
-					}
-					if ($login) {
 						$_SESSION['role'] = $user->getRole();
 						$_SESSION['loggedIn'] = true;
 					}
-				}	
-			}
-			return $login;
+				}
 		}
 	} // class
 ?>

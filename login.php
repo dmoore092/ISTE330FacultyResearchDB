@@ -1,27 +1,19 @@
 <?php
   session_name("user");
-  if(!isset($_SESSION)) {
-    session_start();
-    $_SESSION['loggedIn'] == false;
-  }
+  session_start();
 
   include "classes/User.PDO.class.php";
   include_once 'assets/inc/nav.php';
 
-  if($_SESSION['loggedIn'] == true) {
-    header("Location: ./myProjects.php");
-  }
-
-  if(isset($_POST["username"]) && isset($_POST['password'])) {
+  if(isset($_POST["login"])){
     $username = $_POST["username"];
     $password = $_POST["password"];
-
     $user = new UserDB();
-    if($user->login($username, $password)) {
-      header("Location: ./myProjects.php");
-    } else {
-        echo "<h1> ERROR: Invalid credentials </h1>";
-    }
+    $user->login($username, $password);
+  }
+
+  if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+    header("Location: ./myProjects.php");
   }
 
 ?>
@@ -44,7 +36,7 @@
     <input type="text" class="sign-in-form-username" id="sign-in-form-username" name="username">
     <label for="sign-in-form-password">Password</label>
     <input type="password" class="sign-in-form-password" id="sign-in-form-password" name="password">
-    <button type="submit" class="sign-in-form-button">Login</button>
+    <input type="submit" class="sign-in-form-button" value="Login" name="login"/> 
     <p class="text-center"><a href="#">Forgot your password?</a></p>
     <p class="text-center"><a href="#">Create Account</a></p>
   </div>

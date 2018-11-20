@@ -1,9 +1,9 @@
 <?php
     session_name("user");
-    if(!isset($_SESSION)) {
-      session_start();
-      $_SESSION['loggedIn'] == false;
-    }
+    session_start();
+    if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+        header("Location: ./myProjects.php");
+      }
 ?>
 <!DOCTYPE HTML>
 <html>
