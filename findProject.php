@@ -37,5 +37,8 @@
 </head>
 <body>
 
+<?php
+  include_once 'assets/inc/footer.php';
+?>
 </body>
 </html>

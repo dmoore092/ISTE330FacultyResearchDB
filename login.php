@@ -34,7 +34,7 @@
 </head>
 <body>
   <h1 class="title">CollaboRIT</h1>
-<div id="feedbackUsername">
+<div id="feedback">
   <div data-closable class="callout alert-callout-subtle alert">
     <strong>ERROR:</strong> Username or password are incorrect
       <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
@@ -42,14 +42,6 @@
     </button>
   </div>
 </div>
-<!--<div id="feedbackPassword">
-  <div data-closable class="callout alert-callout-subtle alert">
-    <strong>ERROR:</strong> Password Required
-      <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-        <span aria-hidden="true">⊗</span>
-    </button>
-  </div>
-</div>-->
 <form class="loginForm" action="login.php" method="POST">
   <div class="sign-in-form">
     <label for="sign-in-form-username">Username</label>
@@ -61,37 +53,10 @@
     <p class="text-center"><a href="#">Create Account</a></p>
   </div>
 </form>
-<script>
-//    function validateForm() {
-      if("<?php echo $isLoggedIn ?>" == "0") {
-          document.getElementById("feedbackUsername").style.display = "block";
-          //document.getElementById("feedbackPassword").setAttribute("style", "display:block");
-      }
 
-
-
-    // var username = document.forms["loginForm"]["username"].value;
-    // var password = document.forms["loginForm"]["password"].value;
-    
-    // if (username == "" || username ==  undefined) {
-    //   document.getElementById("feedbackUsername").setAttribute("style", "display:block");
-    //   return false;
-    // }
-
-    // if (password == "" || password == undefined) {
-    //   document.getElementById("feedbackPassword").setAttribute("style", "display:block");
-
-    //   return false;
-    // }
-    
-    // return true;
-
-  </script>
-
-  <script src="assets/scripts/vendor/jquery.js"></script>
-  <script src="assets/scripts/vendor/what-input.js"></script>
-  <script src="assets/scripts/vendor/foundation.js"></script>
-  <script src="assets/scripts/app.js"></script>
-  <script>$("[data-menu-underline-from-center] a").addClass("underline-from-center");</script>
+<?php
+  include_once 'assets/inc/validation.php';
+  include_once 'assets/inc/footer.php';
+?>
 </body>
 </html>

@@ -14,6 +14,8 @@
     ?>
 <h1 class="title">My Projects</h1>
 
-
+<?php
+  include_once 'assets/inc/footer.php';
+?>
 </body>
 </html>
