@@ -104,7 +104,8 @@
 					var_dump($data);
 					$user = $data[0];
 					var_dump($hashed_password);
-					if(password_verify($user->getPassword(), $hashed_password)) {
+					//if(password_verify($user->getPassword(), $hashed_password)) {
+					 if($hashed_password == $user->getPassword()){
 						$_SESSION['username'] = $user->getUsername();
 						$_SESSION['role'] = $user->getRole();
 						$_SESSION['loggedIn'] = true;
