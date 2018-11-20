@@ -30,8 +30,8 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <script>
 //    function validateForm() {
-      var isLoggedIn = "<?php echo $isLoggedIn ?>";
-      console.log(isLoggedIn);
+      //var isLoggedIn = "<?php echo $isLoggedIn ?>";
+      console.log("isLoggedIn");
       if(isLoggedIn == "0") {
         if (username == "" || username ==  undefined) {
           document.getElementById("feedbackUsername").setAttribute("style", "display:block");
