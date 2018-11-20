@@ -5,6 +5,9 @@
   include "classes/User.PDO.class.php";
   include_once 'assets/inc/nav.php';
 
+  //set it as false first
+  $isLoggedIn = 0;
+
   if(isset($_POST["login"])){
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -30,9 +33,8 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <script>
 //    function validateForm() {
-      //var isLoggedIn = "<?php echo $isLoggedIn ?>";
-      console.log("isLoggedIn");
-      if(true) {
+      console.log("<?php echo $isLoggedIn ?>");
+      /*if(true) {
         if (username == "" || username ==  undefined) {
           document.getElementById("feedbackUsername").setAttribute("style", "display:block");
         }
@@ -40,7 +42,7 @@
         if (password == "" || password == undefined) {
           document.getElementById("feedbackPassword").setAttribute("style", "display:block");
         }
-      }
+      }*/
 
 
 
