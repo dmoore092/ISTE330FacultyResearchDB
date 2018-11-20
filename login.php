@@ -33,16 +33,11 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <script>
 //    function validateForm() {
-      console.log("<?php echo $isLoggedIn ?>");
-      /*if(true) {
-        if (username == "" || username ==  undefined) {
+      console.log();
+      if("<?php echo $isLoggedIn ?>" == "0") {
           document.getElementById("feedbackUsername").setAttribute("style", "display:block");
-        }
-
-        if (password == "" || password == undefined) {
           document.getElementById("feedbackPassword").setAttribute("style", "display:block");
-        }
-      }*/
+      }
 
 
 
@@ -61,27 +56,27 @@
     // }
     
     // return true;
-}
+
   </script>
 </head>
 <body>
   <h1 class="title">CollaboRIT</h1>
 <div id="feedbackUsername">
   <div data-closable class="callout alert-callout-subtle alert">
-    <strong>ERROR:</strong> Username Required
+    <strong>ERROR:</strong> Username or password are incorrect
       <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
         <span aria-hidden="true">⊗</span>
     </button>
   </div>
 </div>
-<div id="feedbackPassword">
+<!--<div id="feedbackPassword">
   <div data-closable class="callout alert-callout-subtle alert">
     <strong>ERROR:</strong> Password Required
       <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
         <span aria-hidden="true">⊗</span>
     </button>
   </div>
-</div>
+</div>-->
 <form class="loginForm" action="login.php" method="POST">
   <div class="sign-in-form">
     <label for="sign-in-form-username">Username</label>
