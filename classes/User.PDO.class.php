@@ -93,7 +93,7 @@
 		 */
 		function login($username, $password){
 				$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-				$stmt = $this->dbConn->prepare("select username, password from user where username = ?"); 
+				$stmt = $this->dbConn->prepare("select username, password, role from user where username = ?"); 
 				$stmt->bindParam(1, $username, PDO::PARAM_STR);
 				$stmt->execute();
 				$stmt->setFetchMode(PDO::FETCH_CLASS,"User");
