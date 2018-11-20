@@ -32,21 +32,39 @@
     var username = document.forms["loginForm"]["username"].value;
     var password = document.forms["loginForm"]["password"].value;
     
-    if (username == "" || username ==  null) {
-        alert("Name must be filled out");
-        return false;
-    }
-
-    if (password == "" || password == null) {
-      alert("Password must be filled out")
+    if (username == "" || username ==  undefined) {
+      document.getElementById("feedbackUsername").setAttribute("style", "display:block");
       return false;
     }
+
+    if (password == "" || password == undefined) {
+      document.getElementById("feedbackPassword").setAttribute("style", "display:block");
+
+      return false;
+    }
+    
     return true;
 }
   </script>
 </head>
 <body>
   <h1 class="title">CollaboRIT</h1>
+<div id="feedbackUsername">
+  <div data-closable class="callout alert-callout-subtle alert">
+    <strong>ERROR:</strong> Username Required
+      <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <span aria-hidden="true">⊗</span>
+    </button>
+  </div>
+</div>
+<div id="feedbackPassword">
+  <div data-closable class="callout alert-callout-subtle alert">
+    <strong>ERROR:</strong> Password Required
+      <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <span aria-hidden="true">⊗</span>
+    </button>
+  </div>
+</div>
 <form class="loginForm" action="login.php" onsubmit="return validateForm();" method="POST">
   <div class="sign-in-form">
     <label for="sign-in-form-username">Username</label>
