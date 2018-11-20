@@ -27,11 +27,27 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/loginStyle.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-</head>
+  <script>
+    function validateForm() {
+    var username = document.forms["loginForm"]["username"].value;
+    var password = document.forms["loginForm"]["password"].value;
+    
+    if (username == "" || username ==  null) {
+        alert("Name must be filled out");
+        return false;
+    }
+
+    if (password == "" || password == null) {
+      alert("Password must be filled out")
+      return false;
+    }
+    return true;
+}
+  </script>
 </head>
 <body>
   <h1 class="title">CollaboRIT</h1>
-<form class="loginForm" action="login.php" method="POST">
+<form class="loginForm" action="login.php" onsubmit="return validateForm();" method="POST">
   <div class="sign-in-form">
     <label for="sign-in-form-username">Username</label>
     <input type="text" class="sign-in-form-username" id="sign-in-form-username" name="username">

@@ -100,7 +100,7 @@
                 while($databaseUser = $stmt->fetch()){
                     $data[] = $databaseUser;
 				}
-				if(count($data == 1)){
+				if((count($data)) == 1){
 					var_dump($data);
 					$user = $data[0];
 					var_dump($hashed_password);
