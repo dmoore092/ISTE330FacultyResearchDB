@@ -110,7 +110,12 @@
 						$_SESSION['role'] = $user->getRole();
 						$_SESSION['loggedIn'] = true;
 					}
+					//true
+					return 1;
+
 				}
+				//false
+				return 0;
 		}
 	} // class
 ?>

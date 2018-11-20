@@ -9,6 +9,7 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
     $user = new UserDB();
+    //user will equals (0 || false) || (1 || true)
     $user->login($username, $password);
   }
 
@@ -28,22 +29,35 @@
   <link rel="stylesheet" href="assets/css/loginStyle.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <script>
-    function validateForm() {
-    var username = document.forms["loginForm"]["username"].value;
-    var password = document.forms["loginForm"]["password"].value;
-    
-    if (username == "" || username ==  undefined) {
-      document.getElementById("feedbackUsername").setAttribute("style", "display:block");
-      return false;
-    }
+//    function validateForm() {
+      //could do this
+      if(<?php echo $user; ?> == 0) {
+        if (username == "" || username ==  undefined) {
+          document.getElementById("feedbackUsername").setAttribute("style", "display:block");
+        }
 
-    if (password == "" || password == undefined) {
-      document.getElementById("feedbackPassword").setAttribute("style", "display:block");
+        if (password == "" || password == undefined) {
+          document.getElementById("feedbackPassword").setAttribute("style", "display:block");
+        }
+      }
 
-      return false;
-    }
+
+
+    // var username = document.forms["loginForm"]["username"].value;
+    // var password = document.forms["loginForm"]["password"].value;
     
-    return true;
+    // if (username == "" || username ==  undefined) {
+    //   document.getElementById("feedbackUsername").setAttribute("style", "display:block");
+    //   return false;
+    // }
+
+    // if (password == "" || password == undefined) {
+    //   document.getElementById("feedbackPassword").setAttribute("style", "display:block");
+
+    //   return false;
+    // }
+    
+    // return true;
 }
   </script>
 </head>
@@ -65,7 +79,7 @@
     </button>
   </div>
 </div>
-<form class="loginForm" action="login.php" onsubmit="return validateForm();" method="POST">
+<form class="loginForm" action="login.php" method="POST">
   <div class="sign-in-form">
     <label for="sign-in-form-username">Username</label>
     <input type="text" class="sign-in-form-username" id="sign-in-form-username" name="username">
