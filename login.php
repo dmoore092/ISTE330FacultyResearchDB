@@ -32,7 +32,7 @@
 //    function validateForm() {
       //var isLoggedIn = "<?php echo $isLoggedIn ?>";
       console.log("isLoggedIn");
-      if(isLoggedIn == "0") {
+      if(true) {
         if (username == "" || username ==  undefined) {
           document.getElementById("feedbackUsername").setAttribute("style", "display:block");
         }
