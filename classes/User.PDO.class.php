@@ -92,7 +92,7 @@
 		 * and false if they don't
 		 */
 		function login($username, $password){
-				$hashed_password = password_hash("sha256", $password);
+				$hashed_password = password_hash($password, "sha256");
 				$stmt = $this->dbConn->prepare("select username, password, role from user where username = ?"); 
 				$stmt->bindParam(1, $username, PDO::PARAM_STR);
 				$stmt->execute();
