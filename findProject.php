@@ -1,6 +1,9 @@
 <?php $page = "findProject"; 
 
       include "assets/inc/header.inc.php";
+      if (isset($GET['logout'])) {
+        logout();
+    }
 ?>
 <?php
 

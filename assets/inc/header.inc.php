@@ -12,8 +12,4 @@
     <?php
         include_once 'assets/inc/nav.php';
         include_once 'classes/PDO.DB.class.php';
-
-        if (isset($GET['logout'])) {
-            logout();
-        }
     ?>
