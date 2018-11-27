@@ -10,11 +10,11 @@ session_name("user");
     switch($_SESSION['role']){
       case 1:
         echo "<h1>I am a professor.</h1>";
-        echo $projectDB->getProjectsAsTable(true);
+        $data = $projectDB->getProjectsByFacultyName($_SESSION['fullname']);
+        echo $projectDB->getProjectsAsTable(true, $data);
       break;
       case 2:
-        echo "<h1>I am a student.</h1>";
-        echo $projectDB->getProjectsAsTable();
+        echo "<p>You must be a professor to access this page.</p><br/><a href='find.php'>Find projects.</a>";
       break;
     }
   }else{
