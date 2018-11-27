@@ -136,7 +136,7 @@
                             <input type='hidden' name='project_id' value='{$project->getId()}'/>
                             <td><input type='text' name='player_first_name' placeholder='{$project->getProjectName()}'/></td>
                             <td><input type='text' name='player_last_name' placeholder='{$project->getProjectLead()}'/></td>
-                            <td><input type='text' name='player_jersey_num' placeholder='{$player->getDescription()}'/></td>
+                            <td><input type='text' name='player_jersey_num' placeholder='{$project->getDescription()}'/></td>
                             <td>
                                 <input type='submit' name='updateProject' value='Update'/>
                                 <input type='submit' name='deleteProject' value='Delete'/>
