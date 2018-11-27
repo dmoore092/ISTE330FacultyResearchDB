@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title><?php echo $title; ?></title>
+  <title>CollaboRIT!</title>
   <link rel="stylesheet" href="assets/css/icons/foundation-icons.css">
   <link rel="stylesheet" href="assets/css/foundation.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -11,4 +11,9 @@
 <body>
     <?php
         include_once 'assets/inc/nav.php';
+        include_once 'classes/PDO.DB.class.php';
+
+        if (isset($GET['logout'])) {
+            logout();
+        }
     ?>

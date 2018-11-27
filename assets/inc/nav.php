@@ -8,5 +8,6 @@
         <li><a href="findProject.php">Find Projects</a></li>
         <li><a href="myInfo.php">My Info</a></li>
         <li><a href="login.php">Login</a></li>
+        <li><a href="#?logout=true">Logout<a></li>
     </ul>
 </nav>
