@@ -38,7 +38,6 @@
          */
         function logOut()
         {
-            console.log("Within logout function.");
             session_unset();
 
             unset($_COOKIE[session_name()]);
