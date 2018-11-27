@@ -5,9 +5,9 @@
   <title>My Information</title>
   <?php
     include_once 'assets/inc/header.php';
-    $projectDB = new ProjectDB();
+    $DB = new DB();
     if (isset($_GET['logout'])) {
-      $projectDB->logout();
+      $DB->logout();
     }
   ?>
   <link rel="stylesheet" href="css/style.css">
