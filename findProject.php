@@ -29,7 +29,7 @@
     }
 
     if (isset($GET['logout'])) {
-      logout();
+      $projectDB->logout();
     }
 
   }else{
