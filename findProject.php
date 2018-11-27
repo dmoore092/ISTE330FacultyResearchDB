@@ -27,9 +27,9 @@
         echo $projectDB->getProjectsAsTable(false, $data);
       break;
     }
-    var_dump($GET['logout']);
-    
-    if (isset($GET['logout'])) {
+    var_dump($_GET['logout']);
+
+    if (isset($_GET['logout'])) {
       $projectDB->logout();
     }
 
