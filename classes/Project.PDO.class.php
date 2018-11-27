@@ -42,11 +42,11 @@
 		/**
 		 * getProjectsByFacultyName - gets all the projects associated with the indicated faculty member
 		 */
-		function getProjectsByFacultyName($fName){
+		function getProjectsByFacultyName($fullname){
 			try{
                 $data = array();
-                $stmt = $this->dbConn->prepare("select * from project where projectLead = :fName"); 
-                $stmt->bindParam("fName",$fName,PDO::PARAM_STR, 150);    
+                $stmt = $this->dbConn->prepare("select * from project where projectLead = :fullname"); 
+                $stmt->bindParam("fullname",$fullname,PDO::PARAM_STR, 150);    
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
                 while($databaseProjects = $stmt->fetch()){
