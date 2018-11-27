@@ -1,26 +1,17 @@
-<?php $title = "My Info"; $page = "myInfo"; ?>
-<!DOCTYPE HTML>
-<html>
-<head>
-  <title>My Information</title>
-  <?php
-      include "assets/inc/header.inc.php";
-  ?>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <?php
-        include_once 'assets/inc/nav.php';
-        $DB = new DB();
-        if (isset($_GET['logout'])) {
-          $DB->logout();
-        }
-    ?>
-<h1 class="title">My Information</h1>
+<?php $title = "My Information"; $page = "myInfo";
+
+    include_once 'assets/inc/nav.php';
+    $DB = new DB();
+    if (isset($_GET['logout'])) {
+        $DB->logout();
+    }
+?>
+<main>
+    <h1 class="title">My Information</h1>
+</main>
+
 
 
 <?php
   include_once 'assets/inc/footer.php';
 ?>
-</body>
-</html>

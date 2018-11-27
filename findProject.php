@@ -1,8 +1,6 @@
-<?php $page = "findProject"; 
-      $title = "Find Projects";
-      include "assets/inc/header.inc.php";
-?>
-<?php
+<?php $page = "findProject"; $title = "Find Projects";
+  
+  include "assets/inc/header.inc.php";
 
   session_name("user");
   session_start();
@@ -36,9 +34,6 @@
     echo $projectDB->getProjectsAsTable();
   }
 
-?>
-
-<?php
   include_once 'assets/inc/footer.php';
 ?>
 

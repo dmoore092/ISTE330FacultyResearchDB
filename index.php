@@ -1,7 +1,6 @@
 <?php $title = "Home"; $page = "home";
       include "assets/inc/header.inc.php";
-?>
-<?php
+
     session_name("user");
     session_start();
     $DB = new DB();
@@ -33,4 +32,4 @@
             <img src="assets/media/images/research3.jpg">
         </aside>
     </main>
-    <?php include_once 'assets/inc/footer.php'; ?>
+<?php include_once 'assets/inc/footer.php'; ?>

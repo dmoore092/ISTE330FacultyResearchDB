@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title><?php echo $title; ?></title>
+  <title><?php echo $title ?></title>
   <link rel="stylesheet" href="assets/css/icons/foundation-icons.css">
   <link rel="stylesheet" href="assets/css/foundation.css">
   <link rel="stylesheet" href="assets/css/style.css">

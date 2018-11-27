@@ -1,6 +1,4 @@
-<?php
-$title = "My Projects";
-$page = "findProject";
+<?php $title = "My Projects"; $page = "findProject";
 include "assets/inc/header.inc.php";
 
 session_name("user");
