@@ -1,4 +1,7 @@
-<?php $title = "Login"; $page = "login"; ?>
+<?php $title = "Login"; $page = "login"; 
+    include "assets/inc/header.inc.php";
+?>
+
 <?php
   session_name("user");
   session_start();
