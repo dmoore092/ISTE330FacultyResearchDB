@@ -10,6 +10,9 @@ session_name("user");
   $projectDB = new ProjectDB();
   echo "<h1 class='title'>My Projects</h1>";
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
+    if (isset($_GET['logout'])) {
+      $projectDB->logout();
+    }
     switch($_SESSION['role']){
       case 1:
         echo "<h1>I am a professor.</h1>";

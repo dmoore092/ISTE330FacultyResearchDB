@@ -5,6 +5,9 @@
     session_name("user");
     session_start();
     if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+        if (isset($_GET['logout'])) {
+            $projectDB->logout();
+          }
         header("Location: ./myProjects.php");
       }
 ?>
