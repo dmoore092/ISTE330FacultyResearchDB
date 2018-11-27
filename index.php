@@ -1,3 +1,6 @@
+<?php $page = "index";
+      include "assets/inc/header.inc.php";
+?>
 <?php
     session_name("user");
     session_start();
@@ -5,19 +8,7 @@
         header("Location: ./myProjects.php");
       }
 ?>
-<!DOCTYPE HTML>
-<html>
-<head>
-  <title>CollaboRIT!</title>
-  <?php
-    include_once 'assets/inc/header.php';
-  ?>
-  <link rel="stylesheet" href="assets/css/homeStyle.css">
-</head>
-<body>
-    <?php
-        include_once 'assets/inc/nav.php';
-    ?>
+
     <main>
         <div id="welcome-info">
             <h1 class="title">CollaboRIT- Home of Team Mongoose!</h1>
@@ -38,8 +29,4 @@
             <img src="assets/media/images/research3.jpg">
         </aside>
     </main>
-    <?php
-        include_once 'assets/inc/footer.php';
-    ?>
-    </body>
-</html>
+    <?php include_once 'assets/inc/footer.php'; ?>
