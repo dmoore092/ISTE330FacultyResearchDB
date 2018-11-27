@@ -15,6 +15,10 @@
 
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
 
+    if (isset($_GET['logout'])) {
+      $projectDB->logout();
+    }
+
     switch($_SESSION['role']){
       case 1:
         echo "<h1>I am a professor.</h1>";
@@ -26,11 +30,6 @@
         $data = $projectDB->getEverythingAsObjects("project", "Project");
         echo $projectDB->getProjectsAsTable(false, $data);
       break;
-    }
-    var_dump($_GET['logout']);
-
-    if (isset($_GET['logout'])) {
-      $projectDB->logout();
     }
 
   }else{
