@@ -1,5 +1,4 @@
-<?php
-?>
+<?php $title = "My Info"; $page = "myInfo"; ?>
 <!DOCTYPE HTML>
 <html>
 <head>

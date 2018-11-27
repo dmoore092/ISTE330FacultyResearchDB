@@ -1,3 +1,4 @@
+<?php $title = "Login"; $page = "login"; ?>
 <?php
   session_name("user");
   session_start();
@@ -22,17 +23,7 @@
   }
 
 ?>
-<!DOCTYPE HTML>
-<html>
-<head>
-  <title>Login</title>
-  <?php
-    include_once 'assets/inc/header.php';
-  ?>
-  <link rel="stylesheet" href="assets/css/loginStyle.css">
-</head>
-<body>
-  <h1 class="title">CollaboRIT</h1>
+
 <div id="feedback">
   <div data-closable class="callout alert-callout-subtle alert">
     <strong>ERROR:</strong> Username or password are incorrect
@@ -57,5 +48,4 @@
   include_once 'assets/inc/validation.php';
   include_once 'assets/inc/footer.php';
 ?>
-</body>
-</html>
+
