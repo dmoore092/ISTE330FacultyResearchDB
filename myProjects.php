@@ -1,5 +1,6 @@
 <?php
-
+$title = "My Projects";
+$page = "findProject";
 include_once 'assets/inc/header.php';
 
 session_name("user");
