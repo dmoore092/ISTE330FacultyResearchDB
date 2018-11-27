@@ -1,3 +1,7 @@
+<?php $page = "findProject"; 
+
+      include "assets/inc/header.inc.php";
+?>
 <?php
 
   session_name("user");
@@ -28,19 +32,8 @@
   }
 
 ?>
-<!DOCTYPE HTML>
-<html>
-<head>
-  <title>Find Projects</title>
-  <?php
-    include_once 'assets/inc/header.php';
-  ?>
-  <link rel="stylesheet" href="assets/css/findProjectStyle.css">
-</head>
-<body>
 
 <?php
   include_once 'assets/inc/footer.php';
 ?>
-</body>
-</html>
+

@@ -1,5 +1,8 @@
-<?php
-?>
+<?php ?>
+
+</body>
+</html>
+
 <script src="assets/scripts/vendor/jquery.js"></script>
 <script src="assets/scripts/vendor/what-input.js"></script>
 <script src="assets/scripts/vendor/foundation.js"></script>
