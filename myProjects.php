@@ -10,7 +10,7 @@ session_name("user");
     switch($_SESSION['role']){
       case 1:
         echo "<h1>I am a professor.</h1>";
-        $data = $projectDB->getProjectsByFacultyName($_SESSION['username']);
+        $data = $projectDB->getProjectsByFacultyName($_SESSION['first_name'], $_SESSION['last_name']);
         echo $projectDB->getProjectsAsTable(true, $data);
       break;
       case 2:
