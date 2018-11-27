@@ -1,4 +1,6 @@
-<?php
+<?php $page = "findProject"; $title = "Find Projects";
+  
+  include "assets/inc/header.inc.php";
 
   session_name("user");
   session_start();
@@ -11,30 +13,27 @@
 
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
 
+    if (isset($_GET['logout'])) {
+      $projectDB->logout();
+    }
+
     switch($_SESSION['role']){
       case 1:
         echo "<h1>I am a professor.</h1>";
-        echo $projectDB->getProjectsAsTable(true);
+        $data = $projectDB->getEverythingAsObjects("project", "Project");
+        echo $projectDB->getProjectsAsTable(true, $data);
       break;
       case 2:
         echo "<h1>I am a student.</h1>";
-        echo $projectDB->getProjectsAsTable();
+        $data = $projectDB->getEverythingAsObjects("project", "Project");
+        echo $projectDB->getProjectsAsTable(false, $data);
       break;
     }
-
   }else{
     echo "<p>I am a member of the general public.</p>";
     echo $projectDB->getProjectsAsTable();
   }
 
+  include_once 'assets/inc/footer.php';
 ?>
-<!DOCTYPE HTML>
-<html>
-<head>
-  <title>Find Projects</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
 
-</body>
-</html>

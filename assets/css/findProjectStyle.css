@@ -1,0 +1,9 @@
+
+tr{
+    border: 1px solid black;  
+    
+}
+tbody{
+    max-width: 33%;
+    margin:auto;
+}

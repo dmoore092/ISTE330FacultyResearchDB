@@ -34,6 +34,22 @@
         }
 
         /**
+         * logout() - unset and destroys a session, effectively logging a user
+         */
+        function logOut()
+        {
+            session_unset();
+
+            unset($_COOKIE[session_name()]);
+            setcookie(session_name(), "", time() - 3600, "/");
+
+            session_destroy();   
+            
+            header("Location: ./index.php");
+            exit; 
+        }
+
+        /**
          * updateField() - updates a column for any field for any table
          */
         function updateField($tableName, $fieldName, $value, $id){

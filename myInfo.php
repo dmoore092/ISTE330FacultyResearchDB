@@ -1,19 +1,17 @@
-<?php
+<?php $title = "My Information"; $page = "myInfo";
+
+    include_once 'assets/inc/nav.php';
+    $DB = new DB();
+    if (isset($_GET['logout'])) {
+        $DB->logout();
+    }
 ?>
-<!DOCTYPE HTML>
-<html>
-<head>
-  <title>My Information</title>
-
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <?php
-        include_once 'assets/inc/nav.php';
-    ?>
-<h1 class="title">My Information</h1>
+<main>
+    <h1 class="title">My Information</h1>
+</main>
 
 
 
-</body>
-</html>
+<?php
+  include_once 'assets/inc/footer.php';
+?>

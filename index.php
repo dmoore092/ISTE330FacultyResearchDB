@@ -1,17 +1,17 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <title>CollaboRIT!</title>
-  <link rel="stylesheet" href="assets/css/icons/foundation-icons.css">
-  <link rel="stylesheet" href="assets/css/foundation.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/homeStyle.css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-</head>
-<body>
-    <?php
-        include_once 'assets/inc/nav.php';
-    ?>
+<?php $title = "Home"; $page = "home";
+      include "assets/inc/header.inc.php";
+
+    session_name("user");
+    session_start();
+    $DB = new DB();
+    if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+        if (isset($_GET['logout'])) {
+            $DB->logout();
+          }
+        header("Location: ./myProjects.php");
+      }
+?>
+
     <main>
         <div id="welcome-info">
             <h1 class="title">CollaboRIT- Home of Team Mongoose!</h1>
@@ -32,10 +32,4 @@
             <img src="assets/media/images/research3.jpg">
         </aside>
     </main>
-        <script src="assets/scripts/vendor/jquery.js"></script>
-        <script src="assets/scripts/vendor/what-input.js"></script>
-        <script src="assets/scripts/vendor/foundation.js"></script>
-        <script src="assets/scripts/app.js"></script>
-        <script>$("[data-menu-underline-from-center] a").addClass("underline-from-center");</script>
-    </body>
-</html>
+<?php include_once 'assets/inc/footer.php'; ?>
