@@ -8,6 +8,7 @@ session_name("user");
   include_once "assets/inc/nav.php";
   include_once "classes/Project.PDO.class.php";
   $projectDB = new ProjectDB();
+  $projectDB = new ProjectDB();
   echo "<h1 class='title'>My Projects</h1>";
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
     if (isset($_GET['logout'])) {

@@ -4,6 +4,7 @@
 <?php
     session_name("user");
     session_start();
+    $projectDB = new ProjectDB();
     if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
         if (isset($_GET['logout'])) {
             $projectDB->logout();
