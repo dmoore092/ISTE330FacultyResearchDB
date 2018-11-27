@@ -1,4 +1,4 @@
-<?php $title = "Home"; $page = "home"; ?>
+<?php $title = "Home"; $page = "home";
       include "assets/inc/header.inc.php";
 ?>
 <?php
