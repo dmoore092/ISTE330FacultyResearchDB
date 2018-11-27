@@ -1,9 +1,6 @@
 <?php $page = "findProject"; 
 
       include "assets/inc/header.inc.php";
-      if (isset($GET['logout'])) {
-        logout();
-    }
 ?>
 <?php
 
@@ -29,6 +26,10 @@
         $data = $projectDB->getEverythingAsObjects("project", "Project");
         echo $projectDB->getProjectsAsTable(false, $data);
       break;
+    }
+
+    if (isset($GET['logout'])) {
+      logout();
     }
 
   }else{
