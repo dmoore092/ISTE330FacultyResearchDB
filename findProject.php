@@ -1,5 +1,5 @@
 <?php $page = "findProject"; 
-
+      $title = "Find Projects";
       include "assets/inc/header.inc.php";
 ?>
 <?php
