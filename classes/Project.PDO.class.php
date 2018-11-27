@@ -42,7 +42,7 @@
 		/**
 		 * getProjectsByFacultyName - gets all the projects associated with the indicated faculty member
 		 */
-		function getProjectsByFacultyName($fName){
+		function getProjectsByFacultyName($fullname){
 			try{
                 $data = array();
                 $stmt = $this->dbConn->prepare("select * from project where projectLead = :fName"); 
