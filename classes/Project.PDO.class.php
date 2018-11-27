@@ -124,9 +124,9 @@
                 }
             }
 		}  
-        function getProjectsAsTable($editable=false){
-            $data = $this->getEverythingAsObjects("project", "Project");
-            if(count($data) > 0){
+        function getProjectsAsTable($editable=false, $data=null){
+            //$data = $this->getEverythingAsObjects("project", "Project");
+            if($data != null && count($data) > 0){
                 $html = "<table>\n";
                 if($editable){
                     $html .= "<tr><th>Project Name</th><th>Project Lead</th><th>Project Description</th><th></th></tr>";
@@ -134,9 +134,9 @@
                         $html .= "<form action= 'findProject.php' method='post'>
                         <tr>
                             <input type='hidden' name='project_id' value='{$project->getId()}'/>
-                            <td><input type='text' name='player_first_name' placeholder='{$project->getProjectName()}'/></td>
-                            <td><input type='text' name='player_last_name' placeholder='{$project->getProjectLead()}'/></td>
-                            <td><input type='text' name='player_jersey_num' placeholder='{$project->getDescription()}'/></td>
+                            <td><input type='text' name='project_name' placeholder='{$project->getProjectName()}'/></td>
+                            <td><input type='text' name='project_lead' placeholder='{$project->getProjectLead()}'/></td>
+                            <td><input type='text' name='project_desc' placeholder='{$project->getDescription()}'/></td>
                             <td>
                                 <input type='submit' name='updateProject' value='Update'/>
                                 <input type='submit' name='deleteProject' value='Delete'/>
