@@ -110,7 +110,7 @@
 						$_SESSION['username'] = $user->getUsername();
 						$_SESSION['role'] = $user->getRole();
 						$_SESSION['loggedIn'] = true;
-                        $_SESSION['name'] = $user->getName();
+                        $_SESSION['fullname'] = $user->getName();
 					}
 					//true
 					return 1;
