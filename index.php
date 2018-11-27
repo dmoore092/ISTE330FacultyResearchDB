@@ -4,10 +4,10 @@
 <?php
     session_name("user");
     session_start();
-    $projectDB = new ProjectDB();
+    $DB = new DB();
     if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
         if (isset($_GET['logout'])) {
-            $projectDB->logout();
+            $DB->logout();
           }
         header("Location: ./myProjects.php");
       }
