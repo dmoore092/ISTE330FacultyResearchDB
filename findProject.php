@@ -31,7 +31,6 @@
         echo $projectDB->getProjectsAsTable(false, $data);
       break;
     }
-
   }else{
     echo "<p>I am a member of the general public.</p>";
     echo $projectDB->getProjectsAsTable();
