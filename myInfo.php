@@ -4,7 +4,7 @@
 <head>
   <title>My Information</title>
   <?php
-    include_once 'assets/inc/header.php';
+      include "assets/inc/header.inc.php";
   ?>
   <link rel="stylesheet" href="css/style.css">
 </head>

@@ -1,7 +1,7 @@
 <?php
 $title = "My Projects";
 $page = "findProject";
-include_once 'assets/inc/header.php';
+include "assets/inc/header.inc.php";
 
 session_name("user");
   session_start();
