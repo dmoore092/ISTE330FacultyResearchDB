@@ -18,12 +18,12 @@
     switch($_SESSION['role']){
       case 1:
         echo "<h1>I am a professor.</h1>";
-        $data = $projectDb->getEverythingAsObjects("project", "Project");
+        $data = $projectDB->getEverythingAsObjects("project", "Project");
         echo $projectDB->getProjectsAsTable(true, $data);
       break;
       case 2:
         echo "<h1>I am a student.</h1>";
-        $data = $projectDb->getEverythingAsObjects("project", "Project");
+        $data = $projectDB->getEverythingAsObjects("project", "Project");
         echo $projectDB->getProjectsAsTable(false, $data);
       break;
     }
