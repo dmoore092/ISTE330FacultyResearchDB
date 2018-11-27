@@ -1,4 +1,4 @@
-<?php $page = "index";
+<?php $page = "home";
       include "assets/inc/header.inc.php";
 ?>
 <?php
