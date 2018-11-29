@@ -55,11 +55,9 @@
         function updateField($tableName, $fieldName, $value, $id){
             $ra = -1;
             try{
-                $query = "UPDATE :table SET :column = :value WHERE id = :id";
+                $query = "UPDATE $tableName SET $fieldName = :value WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
                 $stmt->execute(array(
-                    ":table"=>$tableName,
-                    ":column"=>$fieldName,
                     ":value"=>$value,
                     ":id"=>$id
                 ));
