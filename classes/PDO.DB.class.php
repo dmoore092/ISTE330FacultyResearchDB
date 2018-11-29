@@ -71,7 +71,6 @@
          * delete() - deletes any entry for any table
          */
         function delete($tableName, $id){
-            $ra = -1;
             try{
                 $query = "DELETE FROM :tableName WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
@@ -83,7 +82,6 @@
             }catch(PDOException $e){
                 return "A problem occurred deleting from $tableName";
             }
-            return $ra;
         }
 
         /**
