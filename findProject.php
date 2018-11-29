@@ -20,20 +20,22 @@
     if(isset($_POST['updateProject']){
       $updateArray = array();
       if(isset($_POST['project_name']){
-        if($projectDB->isAlphanumeric($_POST['project_name'])){
+        if($projectDB->isAlphanumeric($_POST['project_name']) != 0){
           $updateArray['project_name'] = $projectDB->sanitize($_POST['project_name']);
         }
       }
       if(isset($_POST['project_lead']){
-        if($projectDB->isAlphabetic($_POST['project_lead'])){
+        if($projectDB->isAlphabetic($_POST['project_lead']) != 0){
           $updateArray['project_lead'] = $projectDB->sanitize($_POST['project_lead']);
         }
       }
       if(isset($_POST['project_desc']){
-        if($projectDB->isAlphanumeric($_POST['project_desc'])){
+        if($projectDB->isAlphanumeric($_POST['project_desc']) != 0){
           $updateArray['project_desc'] = $projectDB->sanitize($_POST['project_desc']);
         }
       }
+      
+      $projectDB->updateProject($updateArray);
     }
 
     switch($_SESSION['role']){
