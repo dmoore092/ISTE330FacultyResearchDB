@@ -115,7 +115,7 @@
                         break;
                     case 'project_name':
 			echo "<h2>Calling update field for the project name.</h2>";
-                        $this->updateField('project', 'projectName', $val, $id);
+                        echo $this->updateField('project', 'projectName', $val, $id);
                         break;
                     case 'project_lead':
                         $this->updateField('project', 'projectLead', $val, $id);
