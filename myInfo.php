@@ -5,6 +5,10 @@
     if (isset($_GET['logout'])) {
         $DB->logout();
     }
+
+    if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+        header("Location: ./login.php");
+      }
 ?>
 <main>
     <h1 class="title">My Information</h1>
