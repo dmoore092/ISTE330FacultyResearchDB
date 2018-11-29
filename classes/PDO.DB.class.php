@@ -57,7 +57,7 @@
             try{
                 $query = "UPDATE :table SET :column = :value WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
-                $ra = $stmt->execute(array(
+                $stmt->execute(array(
                     ":table"=>$tableName,
                     ":column"=>$fieldName,
                     ":value"=>$value,
