@@ -132,5 +132,26 @@
             }
             return $data;
         }
+
+	function sanitize($value){
+		$value = trim($value);
+		$value = stripslashes($value);
+		$value = strip_tags($value);
+		$value = htmlentities($value);
+		return $value;
+	}
+
+	function isAlphabetic($value){
+		
+	}
+
+	function isAlphaNumeric($value){
+
+	}
+
+	function isNumeric($value){
+	
+	}
+
     } // class
 ?>
