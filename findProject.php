@@ -13,8 +13,27 @@
 
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
 
-    if (isset($_GET['logout'])) {
+    if(isset($_GET['logout'])) {
       $projectDB->logout();
+    }
+
+    if(isset($_POST['updateProject']){
+      $updateArray = array();
+      if(isset($_POST['project_name']){
+        if($projectDB->isAlphanumeric($_POST['project_name'])){
+          $updateArray['project_name'] = $projectDB->sanitize($_POST['project_name']);
+        }
+      }
+      if(isset($_POST['project_lead']){
+        if($projectDB->isAlphabetic($_POST['project_lead'])){
+          $updateArray['project_lead'] = $projectDB->sanitize($_POST['project_lead']);
+        }
+      }
+      if(isset($_POST['project_desc']){
+        if($projectDB->isAlphanumeric($_POST['project_desc'])){
+          $updateArray['project_desc'] = $projectDB->sanitize($_POST['project_desc']);
+        }
+      }
     }
 
     switch($_SESSION['role']){
