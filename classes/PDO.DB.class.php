@@ -57,13 +57,12 @@
             try{
                 $query = "UPDATE :table SET :column = :value WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
-                $stmt->bindParam(array(
+                $ra = $stmt->execute(array(
                     ":table"=>$tableName,
                     ":column"=>$fieldName,
                     ":value"=>$value,
                     ":id"=>$id
                 ));
-                $ra = $stmt->execute();
             }catch(PDOException $e){
                 return "A problem occurred updating $tableName";
             }
