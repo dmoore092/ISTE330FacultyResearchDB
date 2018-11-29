@@ -13,8 +13,34 @@
 
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
 
-    if (isset($_GET['logout'])) {
+    if(isset($_GET['logout'])) {
       $projectDB->logout();
+    }
+
+    if(isset($_POST['updateProject'])){
+      $updateArray = array();
+      if(isset($_POST['project_id'])){
+        $updateArray['project_id'] = $_POST['project_id'];
+        
+        //Only contine to the other conditionals if there is an ID in the update array
+        if(isset($_POST['project_name'])){
+          if($projectDB->isAlphanumeric($_POST['project_name']) != 0){
+            $updateArray['project_name'] = $projectDB->sanitize($_POST['project_name']);
+          }
+        }
+        if(isset($_POST['project_lead'])){
+          if($projectDB->isAlphabetic($_POST['project_lead']) != 0){
+            $updateArray['project_lead'] = $projectDB->sanitize($_POST['project_lead']);
+          }
+        }
+        if(isset($_POST['project_desc'])){
+          if($projectDB->isAlphanumeric($_POST['project_desc']) != 0){
+            $updateArray['project_desc'] = $projectDB->sanitize($_POST['project_desc']);
+          }
+        }
+      }
+
+      $projectDB->updateProject($updateArray);
     }
 
     switch($_SESSION['role']){

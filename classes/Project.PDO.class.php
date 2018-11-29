@@ -105,14 +105,16 @@
 		/**
 		 * updateProject() - Takes in an associative array where the key is the field name and the value is the value to be updated for that field, then updates them
 		 */
-		function updateProject($updateArray){
-			$id = '';
+	function updateProject($updateArray){
+		var_dump($updateArray);
+		$id = '';
             foreach($updateArray as $key=>$val){
                 switch($key){
                     case "project_id": // case will be the name of the form field the user types in
                         $id = $val;
                         break;
                     case 'project_name':
+			echo "<h2>Calling update field for the project name.</h2>";
                         $this->updateField('project', 'projectName', $val, $id);
                         break;
                     case 'project_lead':
@@ -123,7 +125,7 @@
                         break;
                 }
             }
-		}  
+	}  
         function getProjectsAsTable($editable=false, $data=null){
             //$data = $this->getEverythingAsObjects("project", "Project");
             if($data != null && count($data) > 0){

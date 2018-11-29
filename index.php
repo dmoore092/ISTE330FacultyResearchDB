@@ -8,7 +8,6 @@
         if (isset($_GET['logout'])) {
             $DB->logout();
           }
-        header("Location: ./myProjects.php");
       }
 ?>
 

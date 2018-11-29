@@ -57,13 +57,12 @@
             try{
                 $query = "UPDATE :table SET :column = :value WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
-                $stmt->bindParam(array(
+                $ra = $stmt->execute(array(
                     ":table"=>$tableName,
                     ":column"=>$fieldName,
                     ":value"=>$value,
                     ":id"=>$id
                 ));
-                $ra = $stmt->execute();
             }catch(PDOException $e){
                 return "A problem occurred updating $tableName";
             }
@@ -132,5 +131,29 @@
             }
             return $data;
         }
+
+	function sanitize($value){
+		$value = trim($value);
+		$value = stripslashes($value);
+		$value = strip_tags($value);
+		$value = htmlentities($value);
+		return $value;
+	}
+
+	function isAlphabetic($value){
+		$reg = "/^[a-zA-Z] [a-zA-Z\\s]+$/";
+		return preg_match($reg, $value);
+	}
+
+	function isAlphaNumeric($value){
+		$reg = "/^[a-zA-Z0-9 ]+$/";
+		return preg_match($reg, $value);
+	}
+
+	function isNumeric($value){
+		$reg = "/^[0-9]*$/";
+		return preg_match($reg, $value);
+	}
+
     } // class
 ?>
