@@ -142,15 +142,18 @@
 	}
 
 	function isAlphabetic($value){
-		
+		$reg = "/^[a-zA-Z] [a-zA-Z\\s]+$/";
+		return preg_match($reg, $val);
 	}
 
 	function isAlphaNumeric($value){
-
+		$reg = "/^[a-zA-Z0-9 ]+$/";
+		return preg_match($reg, $val);
 	}
 
 	function isNumeric($value){
-	
+		$reg = "/^[0-9]*$/";
+		return preg_match($reg, $val);
 	}
 
     } // class
