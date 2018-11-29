@@ -106,6 +106,7 @@
 		 * updateProject() - Takes in an associative array where the key is the field name and the value is the value to be updated for that field, then updates them
 		 */
 	function updateProject($updateArray){
+		var_dump($updateArray);
 		$id = '';
             foreach($updateArray as $key=>$val){
                 switch($key){
