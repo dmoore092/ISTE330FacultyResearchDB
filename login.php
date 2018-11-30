@@ -20,7 +20,7 @@
 
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
     echo "<h1>Logged in</h1>";
-    header("Location: ./myProjects.php");
+    //header("Location: ./myProjects.php");
   }
 
 ?>
