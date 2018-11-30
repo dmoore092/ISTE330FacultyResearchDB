@@ -70,13 +70,11 @@
          */
         function delete($tableName, $id){
             try{
-                $query = "DELETE FROM :tableName WHERE id = :id";
+                $query = "DELETE FROM $tableName WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
-                $stmt->bindParam(array(
-                    ":table"=>$tableName,
+                $stmt->execute(array(
                     ":id"=>$id
                 ));
-                $ra = $stmt->execute();
             }catch(PDOException $e){
                 return "A problem occurred deleting from $tableName";
             }
