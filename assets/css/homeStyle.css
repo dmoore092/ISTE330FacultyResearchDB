@@ -30,7 +30,7 @@ aside h3{
     margin-top: 3em;
 }
 aside div {
-    position:absolute;
+    position:inherit;
     background-color: orange;
     padding: 5px;
     margin-bottom: 10px;
