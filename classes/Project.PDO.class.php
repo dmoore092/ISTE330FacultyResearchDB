@@ -45,13 +45,16 @@
 		function getProjectsByFacultyName($fullname){
 			try{
                 $data = array();
+                var_dump($fullname);
                 $stmt = $this->dbConn->prepare("select * from project where projectLead = :fullname"); 
                 $stmt->bindParam("fullname",$fullname,PDO::PARAM_STR, 150);    
+                var_dump($stmt);
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
                 while($databaseProjects = $stmt->fetch()){
                     $data[] = $databaseProjects;
                 }
+                var_dump($data);
                 return $data;
             }
             catch(PDOException $e){
