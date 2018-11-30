@@ -106,14 +106,14 @@
 		 * updateProject() - Takes in an associative array where the key is the field name and the value is the value to be updated for that field, then updates them
 		 */
 	function updateProject($updateArray){
-		$id = '';
+        $id = '';
+        var_dump($updateArray);
             foreach($updateArray as $key=>$val){
                 switch($key){
                     case "project_id": // case will be the name of the form field the user types in
                         $id = $val;
                         break;
                     case 'project_name':
-			echo "<h2>Calling update field for the project name.</h2>";
                         echo $this->updateField('project', 'projectName', $val, $id);
                         break;
                     case 'project_lead':

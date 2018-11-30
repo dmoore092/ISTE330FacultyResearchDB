@@ -25,7 +25,6 @@ session_name("user");
         }
         if(isset($_POST['project_lead'])){
           if($projectDB->isAlphanumeric($_POST['project_lead']) != 0){
-            echo "<h2>in the project lead</h2>";
             $updateArray['project_lead'] = $projectDB->sanitize($_POST['project_lead']);
           }
         }
@@ -40,7 +39,6 @@ session_name("user");
 
     switch($_SESSION['role']){
       case 1:
-        echo "<h1>I am a professor.</h1>";
         $data = $projectDB->getProjectsByFacultyName($_SESSION['fullname']);
         echo $projectDB->getProjectsAsTable(true, $data);
       break;
