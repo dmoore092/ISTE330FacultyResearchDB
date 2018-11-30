@@ -47,7 +47,7 @@
 			try{
                 $data = array();
                 //$stmt = $this->dbConn->prepare("select distinct projectName, projectLead, email, projectDescription, u.id from project p join user u where p.id = u.id AND u.name = :fullname"); 
-                $stmt = $this->dbConn->("call getMyProjects($id);");
+                $stmt = $this->dbConn->prepare("call getMyProjects($id);");
                 $stmt->bindParam("fullname",$fullname,PDO::PARAM_STR, 150); 
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
