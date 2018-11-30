@@ -53,7 +53,6 @@
          * updateField() - updates a column for any field for any table
          */
         function updateField($tableName, $fieldName, $value, $id){
-            $ra = -1;
             try{
                 $query = "UPDATE $tableName SET $fieldName = :value WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
@@ -64,7 +63,6 @@
             }catch(PDOException $e){
                 return "A problem occurred updating $tableName";
             }
-            return $ra;
         }
 
         /**
