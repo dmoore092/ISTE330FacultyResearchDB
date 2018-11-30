@@ -33,7 +33,8 @@
           break;
         }
       } else {
-          echo "<h2>Not logged in</h2>";
+          echo "<h2 id='nologin'>You must be logged in to see your info</h2>";
+          echo "<a href='login.php' class='redirect-link'>Login</a>'";
         //header("Location: ./login.php");
       }
       echo "</main>";

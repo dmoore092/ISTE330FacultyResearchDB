@@ -38,3 +38,9 @@
     color: black;
     opacity: 1;
 }
+#nologin{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 25%;
+}
