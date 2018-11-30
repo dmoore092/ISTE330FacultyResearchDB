@@ -136,10 +136,8 @@
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
-            $data = $stmt->fetch();
-            if($data != null){
-                $object = $data[0];
-            }
+            $object = $stmt->fetch();
+            
             return $object;
         }
 
