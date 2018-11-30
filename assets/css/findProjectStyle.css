@@ -4,6 +4,7 @@ table{
     background-color: #3d454f;
     border: 2px solid #3d454f;
     border-radius: 5px;
+    clear:both;
 }
 th:nth-of-type(2){
     width: 200px;
@@ -13,9 +14,12 @@ input::placeholder{
 }
 #search-container{
     width:60%;
-    margin: auto;
-    
-    
+    margin: auto;  
 }
+
+#btn-search{
+ float:right;   
+}
+
 
 
