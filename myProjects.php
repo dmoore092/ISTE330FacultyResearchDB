@@ -49,7 +49,12 @@ session_name("user");
       $projectDescription = $projectDB->sanitize($_POST['project_desc']);
       
       if(strlen($projectName) > 0 && strlen($projectLead) > 0 && strlen($projectDescription) > 0){
-        $projectDB->insertProject($projectName, $projectLead, $projectDescription, $_SESSION['id']);
+        if(($projectDB->isAlphanumeric($projectName)) && ($projectDB->isAlphanumeric($projectLead)) && ($projectDB->isAlphanumeric($projectDescription))){
+          $projectDB->insertProject($projectName, $projectLead, $projectDescription, $_SESSION['id']);
+        }
+        else{
+          echo "<h2>Project Name, Lead, and description all must be validly alphanumeric.</h2>";
+        }
       }
       else{
         echo "<h2>All fields must be filled out in order to insert a project.</h2>";
