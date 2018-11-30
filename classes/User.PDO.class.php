@@ -124,7 +124,8 @@
 		function getMyInfo($editable=false, $user=null) {
 			if ($user != null && $_SESSION['loggedIn']) {
 				if ($editable) {
-					$html .= "<form action='myInfo.php' method='post'>
+					$html .= "<form class='infoForm' action='myInfo.php' method='post'>
+					<div class='myinfo-form'>
 					<label for='name'>Name: </label>
 					<input type='text' name='name' value='{$user->getName()}'/>
 					<label for='username'>Username: </label>
@@ -144,10 +145,12 @@
 					<label for='email'>Email: </label>
 					<input type='text' name='email' value='{$user->getEmail()}'/>
 
-						<input type='submit' name='updateUser' value='Update'/>
+					<input type='submit' name='updateUser' value='Update'/>
+					</div>
 					</form>\n";
 				} else {
-					$html .= "<form action='myInfo.php' method='post'>
+					$html .= "<form class='infoForm' action='myInfo.php' method='post'>
+						<div class='myinfo-form'>
 						<label for='name'>Name: </label>
 						<input type='text' name='name' value='{$user->getName()}' readonly/>
 						<label for='username'>Username: </label>
@@ -166,6 +169,7 @@
 						<input type='text' name='phone' value='{$user->getPhone()}' readonly/>
 						<label for='email'>Email: </label>
 						<input type='text' name='email' value='{$user->getEmail()}' readonly/>
+						</div>
 					</form>\n";
 				}
 			}
