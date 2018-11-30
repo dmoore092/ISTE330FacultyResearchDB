@@ -131,9 +131,8 @@
             var_dump($className);
             var_dump($id);
             $object = null;
-            $query = "SELECT * FROM :table WHERE id = :id";
+            $query = "SELECT * FROM $tablename WHERE id = :id";
             $stmt = $this->dbConn->prepare($query);
-            $stmt->bindParam(":table", $table);
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
