@@ -34,3 +34,7 @@
 .myinfo-form output:focus {
     opacity: .8;
 }
+::placeholder{
+    color: black;
+    opacity: 1;
+}
