@@ -13,7 +13,7 @@
 
   echo "<form> 
           <div id='search-container'>
-            <input type='text' id='custId' name='custId' placeholder='Search here'>
+            <input type='text' id='search-box' name='custId' placeholder='Search here'>
             <input id = 'btn-search' type='submit' value='Submit'>
           </div> 
         </form>";
