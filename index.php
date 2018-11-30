@@ -29,7 +29,7 @@
             <a href="findProject.php" ><img src="assets/media/images/research1.jpg"></a>
             <a href="findProject.php" ><div>IT Fluency in Non-human Primates</div></a>
             <a href="findProject.php" ><img src="assets/media/images/research2.jpg"></a>
-            <a href="findProject.php" ><div>How accessiblity influences change in ferret behavior</div></a>
+            <a href="findProject.php" ><div>SOAP: not just for cleaning anymore</div></a>
             <a href="findProject.php" ><img src="assets/media/images/research3.jpg"></a>
             <a href="findProject.php" ><div>Java or PHP? Lets see that back end</div>
         </aside>
