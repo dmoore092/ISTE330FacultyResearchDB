@@ -121,6 +121,9 @@
 
 		function getMyInfo($editable=false, $id) {
 			$user = $this->dbConn->getObjectByID("user", "User", $id);
+
+			var_dump($id);
+			var_dump($user);
 			if ($user != null) {
 				$html = "";
 				if ($editable) {
