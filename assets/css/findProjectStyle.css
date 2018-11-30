@@ -1,9 +1,6 @@
 
-tr{
-    border: 1px solid black;  
+th{
+    background-color: black;  
     
 }
-tbody{
-    max-width: 33%;
-    margin:auto;
-}
+
