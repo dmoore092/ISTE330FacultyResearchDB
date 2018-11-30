@@ -27,11 +27,11 @@
         <aside>
             <h3>Research Highlights</h3>
             <a href="findProject.php" ><img src="assets/media/images/research1.jpg"></a>
-            <div>IT Fluency in Non-human Primates</div>
+            <a href="findProject.php" ><div>IT Fluency in Non-human Primates</div></a>
             <a href="findProject.php" ><img src="assets/media/images/research2.jpg"></a>
-            <div>How accessiblity influences change in ferret behavior</div>
+            <a href="findProject.php" ><div>How accessiblity influences change in ferret behavior</div></a>
             <a href="findProject.php" ><img src="assets/media/images/research3.jpg"></a>
-            <div>Java or PHP? Lets see that back end</div>
+            <a href="findProject.php" ><div>Java or PHP? Lets see that back end</div>
         </aside>
     </main>
 <?php include_once 'assets/inc/footer.php'; ?>
