@@ -6,9 +6,6 @@
     include_once 'assets/inc/nav.php';
 
     $DB = new DB();
-    if (isset($_GET['logout'])) {
-        $DB->logout();
-    }
 
     if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
         if (isset($_GET['logout'])) {
@@ -32,7 +29,8 @@
           break;
         }
       } else {
-        header("Location: ./login.php");
+          echo "<h2>Not logged in</h2>";
+        //header("Location: ./login.php");
       }
 ?>
 <main>
