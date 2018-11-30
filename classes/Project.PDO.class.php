@@ -170,7 +170,7 @@
         }
 
         function displayInsertForm(){
-            $html .= "<form action = 'myProjects.php' method='post'>
+            $html = "<form action = 'myProjects.php' method='post'>
             <tr>
                 <td><input type='text' name='project_name' placeholder='Project Name'/></td>
                 <td><input type='text' name='project_lead' placeholder='Project Lead'/></td>
