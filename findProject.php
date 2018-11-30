@@ -12,8 +12,10 @@
   echo "<h1 class='title'>Find Projects</h1>";
 
   echo "<form> 
-          <input type='text' id='custId' name='custId' placeholder='Search here'>
-          <input type='submit' value='Submit'>
+          <div id='search-container'>
+            <input type='text' id='custId' name='custId' placeholder='Search here'>
+            <input id = 'btn-search' type='submit' value='Submit'>
+          </div> 
         </form>";
 
 
