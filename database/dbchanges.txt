@@ -1,0 +1,1 @@
+change the project lead in the project table from a simple varchar to a foreign key that connects to user.id in the user table
