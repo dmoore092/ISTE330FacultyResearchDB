@@ -26,11 +26,11 @@
         switch($_SESSION['role']) {
           case 1:
             echo "<h1>I am a professor.</h1>";
-            echo $userDB->getMyInfo(true, $user);
+            echo $userDB->getMyInfo(true, $_SESSION['id']);
           break;
           case 2:
           echo "<h1>I am a student.</h1>";
-          echo $userDB->getMyInfo(false, $user);
+          echo $userDB->getMyInfo(false, $_SESSION['id']);
           break;
         }
       } else {

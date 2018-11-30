@@ -119,8 +119,9 @@
 				return 0;
 		}
 
-		function getMyInfo($editable=false, $user=null) {
-			if ($user != null && $_SESSION['loggedIn']) {
+		function getMyInfo($editable=false, $id) {
+			$user = $dbConn->getObjectByID("user", "User", $id);
+			if ($user != null) {
 				if ($editable) {
 					$html .= "<form class='infoForm' action='myInfo.php' method='post'>
 					<div class='myinfo-form'>
