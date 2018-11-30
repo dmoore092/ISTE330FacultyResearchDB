@@ -10,5 +10,5 @@ th:nth-of-type(2){
     width: 200px;
 }
 input::placeholder{
-    color: green;
+    color: black;
 }
