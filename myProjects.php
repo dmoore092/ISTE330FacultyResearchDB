@@ -43,6 +43,19 @@ session_name("user");
       }
     }
 
+    if(isset($_POST['insertProject'])){
+      $projectName = $projectDB->sanitize($_POST['project_name']);
+      $projectLead = $projectDB->sanitize($_POST['project_lead']);
+      $projectDescription = $projectDB->sanitize($_POST['project_desc']);
+      
+      if(strlen($projectName) > 0 && strlen($projectLead) > 0 && strlen($projectDescription) > 0){
+        $projectDB->insertProject($projectName, $projectLead, $projectDescription, $_SESSION['id']);
+      }
+      else{
+        echo "<h2>All fields must be filled out in order to insert a project.</h2>";
+      }
+    }
+
     switch($_SESSION['role']){
       case 1:
         $data = $projectDB->getProjectsByUser($_SESSION['id']);

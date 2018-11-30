@@ -89,13 +89,13 @@
 		function insertProject($projectName, $projectLead, $projectDesc, $facultyID){
             $ra = -1;
             try{
-                $query = "INSERT INTO project(:projectName,:projectLead,:projectDesc,:facultyID)";
+                $query = "INSERT INTO project values(:facultyID,:projectName,:projectLead,:projectDesc)";
                 $stmt = $this->dbConn->prepare($query);
                 $stmt->bindParam(array(
+                    ":facultyID"=>$facultyID,
                     ":projectName"=>$projectName,
                     ":projectLead"=>$projectLead,
-                    ":projectDesc"=>$projectDesc,
-                    ":facultyID"=>$facultyID
+                    ":projectDesc"=>$projectDesc
                 ));
                 $ra = $stmt->execute();
             }catch(PDOException $e){
@@ -109,7 +109,6 @@
 		 */
 	function updateProject($updateArray){
         $id = '';
-        var_dump($updateArray);
             foreach($updateArray as $key=>$val){
                 switch($key){
                     case "project_id": // case will be the name of the form field the user types in
