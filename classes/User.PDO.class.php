@@ -52,28 +52,28 @@
                         $id = $val;
 						break;
 					case 'username':
-                        echo $this->updateField('user', 'username', $val, $id);
+                        $this->updateField('user', 'username', $val, $id);
                         break;
                     case 'password':
                         $this->updateField('user', 'password', $val, $id);
                         break;
                     case 'name':
-                        echo $this->updateField('user', 'name', $val, $id);
+                        $this->updateField('user', 'name', $val, $id);
                         break;
                     case 'tagline':
-                        echo $this->updateField('user', 'tagline', $val, $id);
+                        $this->updateField('user', 'tagline', $val, $id);
 						break;
 					case 'imagepath':
                         $this->updateField('user', 'imagePath', $val, $id);
                         break;
                     case 'title':
-                        echo $this->updateField('user', 'title', $val, $id);
+                        $this->updateField('user', 'title', $val, $id);
                         break;
                     case 'interestArea':
-                        echo $this->updateField('user', 'interestArea', $val, $id);
+                        $this->updateField('user', 'interestArea', $val, $id);
 						break;		
 					case 'office':
-                        echo $this->updateField('user', 'office', $val, $id);
+                    	$this->updateField('user', 'office', $val, $id);
                         break;
                     case 'website':
                         $this->updateField('user', 'website', $val, $id);

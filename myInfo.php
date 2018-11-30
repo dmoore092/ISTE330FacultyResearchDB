@@ -56,16 +56,12 @@
                     }
                 }
                 if(isset($_POST['phone'])){
-                    echo "<h2>Checking phone number.</h2>";
                     if($userDB->isValidPhone($_POST['phone']) != 0){
-                        echo "<h2>Phone number was valid.</h2>";
                         $updateArray['phone'] = $userDB->sanitize($_POST['phone']);
                     }
                 }
                 if(isset($_POST['email'])){
-                    echo "<h2>Checking e-mail</h2>";
                     if($userDB->isValidEmail($_POST['email']) != 0){
-                        echo "<h2>The email was valid.</h2>";
                         $updateArray['email'] = $userDB->sanitize($_POST['email']);
                     }
                 }
