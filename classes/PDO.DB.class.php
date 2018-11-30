@@ -111,7 +111,8 @@
             include_once("$className.class.php");
             $data = array();
             try{
-                $query = "SELECT * FROM $tableName";
+                //$query = "SELECT * FROM $tableName";
+                $query = "SELECT projectName, projectLead, email, projectDescription  FROM $tableName p JOIN user u WHERE p.id = u.id";//change this back if it doesn't work!!!!!!!!!!!
                 $stmt = $this->dbConn->prepare($query);
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
