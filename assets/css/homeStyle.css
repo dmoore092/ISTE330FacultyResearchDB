@@ -31,6 +31,7 @@ aside h3{
 }
 aside div {
     background-color: orange;
+    padding: 5px;
     top: ;
     left:;
     /*transform: translate(-50%, -50%);*
