@@ -55,7 +55,7 @@ session_name("user");
       break;
     }
   }else{
-   echo "<h2 class='title'>You must be logged in to see your projects.</h2><br/><a href='login.php'>Login</a>";
+   echo "<h2 class='title'>You must be logged in to see your projects.</h2><br/><a href='login.php' class='redirect-link'>Login</a>";
   }
 
   include_once 'assets/inc/footer.php';
