@@ -132,7 +132,7 @@
                 if($editable){
                     $html .= "<tr><th>Project Name</th><th>Project Lead</th><th>Project Description</th><th></th></tr>";
                     foreach($data as $project){
-                        $html .= "<form action= 'findProject.php' method='post'>
+                        $html .= "<form action= 'myProjects.php' method='post'>
                         <tr>
                             <input type='hidden' name='project_id' value='{$project->getId()}'/>
                             <td><input type='text' name='project_name' placeholder='{$project->getProjectName()}'/></td>
