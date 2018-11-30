@@ -112,8 +112,11 @@
             $data = array();
             try{
                 //$query = "SELECT * FROM $tableName";
-                $query = "SELECT projectName, user.name, email, projectDescription  FROM $tableName p JOIN user u WHERE p.projectLead = u.id";
+                $query = "SELECT projectName, name, email, projectDescription  FROM $tableName p JOIN user u WHERE p.projectLead = u.id";
                 $stmt = $this->dbConn->prepare($query);
+                var_dump($query);
+                var_dump($className);
+                var_dump($tableName);
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
                 while($item = $stmt->fetch()){
@@ -122,6 +125,7 @@
             }catch(PDOException $e){
                 return "A problem occurred getting everything from the table $tableName";
             }
+            var_dump($data);
             return $data;
         }
 
