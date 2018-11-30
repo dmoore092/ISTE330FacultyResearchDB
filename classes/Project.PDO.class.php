@@ -147,7 +147,6 @@
                         </tr></form>\n";
                     }
                 }else{
-                    var_dump($data);
                     $html .= "<tr><th>Project Name</th><th>Project Lead</th><th>Email</th><th>Project Description</th></tr>";
                     foreach($data as $project){
                         $html .= "<tr>

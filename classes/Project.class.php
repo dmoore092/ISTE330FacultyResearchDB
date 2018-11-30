@@ -43,7 +43,7 @@
 		 * getEmail() - returns the email
 		 */
 		public function getEmail(){
-			return $this->email;//DELETE This if it doesn't work!!!!!!!!!
+			return $this->email;
 		}
 	}
 ?>
