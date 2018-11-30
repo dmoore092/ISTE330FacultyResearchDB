@@ -137,7 +137,7 @@
 	}
 
 	function isAlphabetic($value){
-		$reg = "/^[a-zA-Z] [a-zA-Z\\s]+$/";
+		$reg = "/^[a-zA-Z] [a-zA-Z ]+$/";
 		return preg_match($reg, $value);
 	}
 
