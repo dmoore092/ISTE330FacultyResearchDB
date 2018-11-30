@@ -47,40 +47,40 @@
 			$id = '';
             foreach($updateArray as $key=>$val){
                 switch($key){
-                    case "user_username": // case will be the name of the form field the user types in
+                    case "username": // case will be the name of the form field the user types in
                         $id = $val;
                         break;
-                    case 'user_password':
+                    case 'password':
                         $this->updateField('user', 'password', $val, $id);
                         break;
-                    case 'user_name':
+                    case 'name':
                         $this->updateField('user', 'name', $val, $id);
                         break;
-                    case 'user_tagline':
+                    case 'tagline':
                         $this->updateField('user', 'tagline', $val, $id);
 						break;
-					case 'user_imagepath':
+					case 'imagepath':
                         $this->updateField('user', 'imagepath', $val, $id);
                         break;
-                    case 'user_title':
+                    case 'title':
                         $this->updateField('user', 'title', $val, $id);
                         break;
-                    case 'user_interestArea':
+                    case 'interestArea':
                         $this->updateField('user', 'interestArea', $val, $id);
 						break;		
-					case 'user_office':
+					case 'office':
                         $this->updateField('user', 'office', $val, $id);
                         break;
-                    case 'user_website':
+                    case 'website':
                         $this->updateField('user', 'website', $val, $id);
                         break;
-                    case 'user_phone':
+                    case 'phone':
                         $this->updateField('user', 'phone', $val, $id);
 						break;
-					case 'user_email':
+					case 'email':
 						$this->updateField('user', 'email', $val, $id);
 						break;
-					case 'user_role':
+					case 'role':
 						$this->updateField('user', 'role', $val, $id);
 						break;
                 }
