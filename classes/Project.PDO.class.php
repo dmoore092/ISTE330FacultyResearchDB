@@ -53,6 +53,7 @@
                 while($databaseProjects = $stmt->fetch()){
                     $data[] = $databaseProjects;
                 }
+                var_dump($data);
                 return $data;
             }
             catch(PDOException $e){
