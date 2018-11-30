@@ -10,38 +10,35 @@
         $DB->logout();
     }
 
-    if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+    if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+        if (isset($_GET['logout'])) {
+          $DB->logout();
+        }
+
+        if(isset($_POST['updateUserInfo'])) {
+
+
+
+        }
+
+        switch($_SESSION['role']) {
+          case 1:
+            echo "<h1>I am a professor.</h1>";
+            echo $DB->getMyInfo(true, $user);
+          break;
+          case 2:
+          echo "<h1>I am a student.</h1>";
+          echo $DB->getMyInfo(false, $user);
+          break;
+        }
+      } else {
         header("Location: ./login.php");
-    }
+      }
 ?>
 <main>
     <h1 class="title">My Information</h1>
-
-    <form class="infoForm" action="" method="GET">
-        <div class="myinfo-form">
-            <label>Name: </label>
-            <output type="text" name="name">
-            <label>Username: </label>
-            <output type="text" name="username">
-            <label>Title: </label>
-            <output type="text" name="title">
-            <label>Tagline: </label>
-            <output type="text" name="tagline">
-            <label>Interst Area: </label>
-            <output type="text" name="interestArea">
-            <label>Office: </label>
-            <output type="text" name="office">
-            <label>Website: </label>
-            <output type="text" name="wesbite">
-            <label>Phone: </label>
-            <output type="text" name="phone">
-            <label>Email: </label>
-            <output type="text" name="email">
-        </div>
-    </form>
 </main>
 
-name, username, tagline, title, interestArea, office, website, phone, email
 
 <?php
   include_once 'assets/inc/footer.php';
