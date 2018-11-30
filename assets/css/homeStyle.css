@@ -42,9 +42,9 @@ aside div {
 }
 aside div:hover{
     z-index: 1;
-    -webkit-transition: opacity 2s ease-in;
-    -moz-transition: opacity 2s ease-in;
-    -o-transition: opacity 2s ease-in;
-    -ms-transition: opacity 2s ease-in;
-    transition: opacity 2s ease-in;
+    -webkit-transition: fadein 2s;
+    -moz-transition: fadein 2s;
+    -o-transition: fadein 2s;
+    -ms-transition: fadein 2s;
+    transition: fadein 2s;
 }
