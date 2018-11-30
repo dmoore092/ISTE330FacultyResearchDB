@@ -22,7 +22,7 @@ input::placeholder{
 }
 
 #search-box{
-    width:50%;   
+    float:left;
 }
 
 
