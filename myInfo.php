@@ -10,7 +10,7 @@
     include_once 'assets/inc/nav.php';
 
     $userDB = new UserDB();
-    echo "<h1 class='title'>My Info</h1>";
+    echo "<h1 class='title'>My Information</h1>";
     if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
         
         if (isset($_GET['logout'])) {
