@@ -91,15 +91,14 @@
             try{
                 $query = "INSERT INTO project values(:facultyID,:projectName,:projectLead,:projectDesc)";
                 $stmt = $this->dbConn->prepare($query);
-                $stmt->bindParam(array(
+                $ra = $stmt->execute(array(
                     ":facultyID"=>$facultyID,
                     ":projectName"=>$projectName,
                     ":projectLead"=>$projectLead,
                     ":projectDesc"=>$projectDesc
                 ));
-                $ra = $stmt->execute();
             }catch(PDOException $e){
-                return "A problem occurred updating $tableName";
+                return "A problem occurred inserting a new project.";
             }
             return $ra;
 		}
