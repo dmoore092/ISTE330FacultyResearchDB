@@ -16,7 +16,7 @@
       <input type="text" name="firstname" placeholder="Mickey">
       <br>
       <input type="submit" value="Submit">
-    </form>"
+    </form>";
   
 
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
