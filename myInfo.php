@@ -19,6 +19,7 @@
         if(isset($_POST['updateUserInfo'])) {
             $updateArray = array();
             if(isset($_POST['id'])){
+                $updateArray['id'] = $_POST['id'];
                 if(isset($_POST['name'])){
                     if($userDB->isAlphaNumeric($_POST['name']) != 0){
                         $updateArray['name'] = $userDB->sanitize($_POST['name']);
