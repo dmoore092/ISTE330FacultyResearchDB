@@ -16,14 +16,13 @@
     if(isset($_GET['logout'])) {
       $projectDB->logout();
     }
-
-    if(isset($_SESSION['loggedIn'])){
+      
         $data = $projectDB->getEverythingAsObjects("project", "Project");
         echo $projectDB->getProjectsAsTable(false, $data);
-    }
+    
   }else{
-    echo "<p>I am a member of the general public.</p>";
-    echo $projectDB->getProjectsAsTable();
+    $data = $projectDB->getEverythingAsObjects("project", "Project");
+    echo $projectDB->getProjectsAsTable(false, $data);
   }
 
   include_once 'assets/inc/footer.php';
