@@ -47,6 +47,7 @@ session_name("user");
       case 1:
         $data = $projectDB->getProjectsByUser($_SESSION['id']);
         echo $projectDB->getProjectsAsTable(true, $data);
+        echo $projectDB->displayInsertForm();
       break;
       case 2:
         // echo "<h3 class='title'>You must be a professor to access this page.</h3><br/><a href='find.php'>Find projects.</a>";
