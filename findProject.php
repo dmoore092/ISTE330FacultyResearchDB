@@ -11,7 +11,7 @@
 
   echo "<h1 class='title'>Find Projects</h1>";
 
-  echo "<p>Hello world</p>"
+  echo "<p>Hello world</p>";
 
 
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
