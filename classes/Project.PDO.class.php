@@ -164,7 +164,7 @@
                 }
                 $html .= "</table>";
             }else{
-                $html = "<p>No projects exist.</p>";
+                $html = "<h2>No projects exist.</h2>";
             }
             return $html;
         }
