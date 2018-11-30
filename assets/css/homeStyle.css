@@ -21,7 +21,7 @@ aside{
     border-left: 2px solid orange;
     text-align: center; /*changed this*/
 }
-aside img, aside div{
+aside img{
     width: 85%;
     margin: auto;
     margin-bottom: 1em;
@@ -29,13 +29,12 @@ aside img, aside div{
 aside h3{
     margin-top: 3em;
 }
-/*aside div {
+aside div {
     position:inherit;
     background-color: orange;
     padding: 5px;
-    width: 280px;
-    margin: 0 0 10px 23px;
-    top: -50px;;
-    left:;
-    /*transform: translate(-50%, -50%);*
+    width: 85%;
+    margin: auto;
+    margin-bottom: 1em;
+    /*transform: translate(-50%, -50%);*/
 }
