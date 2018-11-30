@@ -6,8 +6,9 @@
     include_once 'assets/inc/nav.php';
 
     $DB = new DB();
-
+    var_dump($_SESSION);
     if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+        
         if (isset($_GET['logout'])) {
           $DB->logout();
         }
