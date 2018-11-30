@@ -73,7 +73,7 @@
                 $query = "DELETE FROM :tableName WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
                 $stmt->bindParam(array(
-                    ":tableName"=>$tableName,
+                    ":table"=>$tableName,
                     ":id"=>$id
                 ));
                 $ra = $stmt->execute();
@@ -128,9 +128,9 @@
 
         function getObjectByID($table, $className, $id){
             $object = null;
-            $query = "SELECT * FROM :table WHERE id = :id";
+            $query = "SELECT * FROM $table WHERE id = :id";
             $stmt = $this->dbConn->prepare($query);
-            $stmt->bindParam(":table", $table);
+            $stmt->bindParam(":id", $id);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
             $object = $stmt->fetch();
