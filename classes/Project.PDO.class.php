@@ -45,16 +45,13 @@
 		function getProjectsByFacultyName($fullname){
 			try{
                 $data = array();
-                var_dump($fullname);
                 $stmt = $this->dbConn->prepare("select * from project where projectLead = :fullname"); 
                 $stmt->bindParam("fullname",$fullname,PDO::PARAM_STR, 150);    
-                var_dump($stmt);
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
                 while($databaseProjects = $stmt->fetch()){
                     $data[] = $databaseProjects;
                 }
-                var_dump($data);
                 return $data;
             }
             catch(PDOException $e){
@@ -109,7 +106,6 @@
 		 * updateProject() - Takes in an associative array where the key is the field name and the value is the value to be updated for that field, then updates them
 		 */
 	function updateProject($updateArray){
-		var_dump($updateArray);
 		$id = '';
             foreach($updateArray as $key=>$val){
                 switch($key){
