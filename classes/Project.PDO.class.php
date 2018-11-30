@@ -1,6 +1,7 @@
 <?php 
     require_once "PDO.DB.class.php";
     include "Project.class.php";
+    include "User.class.php";
 	/*
 	* ProjectDB class contains all of the methods for using PHP Data Objects to 
 	* interface with the database.
@@ -137,7 +138,7 @@
                             <input type='hidden' name='project_id' value='{$project->getId()}'/>
                             <td><input type='text' name='project_name' placeholder='{$project->getProjectName()}'/></td>
                             <td><input type='text' name='project_lead' placeholder='{$project->getProjectLead()}'/></td>
-                            <td><input type='text' name='project_lead' placeholder='{$project->getEmail()}'/></td>
+                            <td><input type='text' name='email' placeholder='{$user->getEmail()}'/></td>
                             <td><input type='text' name='project_desc' placeholder='{$project->getDescription()}'/></td>
                             <td>
                                 <input type='submit' name='updateProject' value='Update'/>
@@ -151,7 +152,7 @@
                         $html .= "<tr>
                             <td>{$project->getProjectName()}</td>
                             <td>{$project->getProjectLead()}</td>
-                            <td>{$project->getEmail()}</td>
+                            <td>{$user->getEmail()}</td>
                             <td>{$project->getDescription()}</td>
         
                         </tr>";
