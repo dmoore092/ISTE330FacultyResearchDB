@@ -36,7 +36,7 @@ aside .appear {
     width: 85%;
     margin: auto;
     margin-bottom: 1em;
-    bottom: 65px;
+    bottom: 70px;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.2s linear;
