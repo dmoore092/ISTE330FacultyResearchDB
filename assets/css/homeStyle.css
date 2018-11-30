@@ -32,7 +32,7 @@ aside h3{
 aside .appear {
     position:relative;
     background-color: orange;
-    padding: 5px;
+    padding: 15px 5px;
     width: 85%;
     margin: auto;
     margin-bottom: 1em;
