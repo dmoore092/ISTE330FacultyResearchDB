@@ -18,11 +18,11 @@ session_name("user");
         echo $projectDB->getProjectsAsTable(true, $data);
       break;
       case 2:
-        echo "<p>You must be a professor to access this page.</p><br/><a href='find.php'>Find projects.</a>";
+        echo "<h3 class='title'>You must be a professor to access this page.</h3><br/><a href='find.php'>Find projects.</a>";
       break;
     }
   }else{
-   echo "<p>You must be logged in to see your projects.<p><br/><a href='login.php'>Login</a>";
+   echo "<h3 class='title'>You must be logged in to see your projects.<h3><br/><a href='login.php'>Login</a>";
   }
 
   include_once 'assets/inc/footer.php';

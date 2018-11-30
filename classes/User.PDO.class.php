@@ -119,5 +119,55 @@
 				//false
 				return 0;
 		}
+
+		function getMyInfo($editable=false, $user=null) {
+			if ($user != null && $_SESSION['loggedIn']) {
+				if ($editable) {
+					$html .= "<form action='myInfo.php' method='post'>
+					<label for='name'>Name: </label>
+					<input type='text' name='name' value='{$user->getName()}'/>
+					<label for='username'>Username: </label>
+					<input type='text' name='username' value='{$user->getUsername()}'/>
+					<label for='title'>Title: </label>
+					<input type='text' name='title' value='{$user->getTitle()}'/>
+					<label for='tagline'>Tagline: </label>
+					<input type='text' name='tagline' value='{$user->getTagline()}'/>
+					<label for='interestArea'>Interest Area: </label>
+					<input type='text' name='interestArea' value='{$user->getInterestArea()}'/>
+					<label for='office'>Office: </label>
+					<input type='text' name='office' value='{$user->getOffice()}'/>
+					<label for='website'>Website: </label>
+					<input type='text' name='website' value='{$user->getWebsite()}'/>
+					<label for='phone'>Phone: </label>
+					<input type='text' name='phone' value='{$user->getPhone()}'/>
+					<label for='email'>Email: </label>
+					<input type='text' name='email' value='{$user->getEmail()}'/>
+
+						<input type='submit' name='updateUser' value='Update'/>
+					</form>\n";
+				} else {
+					$html .= "<form action='myInfo.php' method='post'>
+						<label for='name'>Name: </label>
+						<input type='text' name='name' value='{$user->getName()}' readonly/>
+						<label for='username'>Username: </label>
+						<input type='text' name='username' value='{$user->getUsername()}' readonly/>
+						<label for='title'>Title: </label>
+						<input type='text' name='title' value='{$user->getTitle()}' readonly/>
+						<label for='tagline'>Tagline: </label>
+						<input type='text' name='tagline' value='{$user->getTagline()}' readonly/>
+						<label for='interestArea'>Interest Area: </label>
+						<input type='text' name='interestArea' value='{$user->getInterestArea()}' readonly/>
+						<label for='office'>Office: </label>
+						<input type='text' name='office' value='{$user->getOffice()}' readonly/>
+						<label for='website'>Website: </label>
+						<input type='text' name='website' value='{$user->getWebsite()}' readonly/>
+						<label for='phone'>Phone: </label>
+						<input type='text' name='phone' value='{$user->getPhone()}' readonly/>
+						<label for='email'>Email: </label>
+						<input type='text' name='email' value='{$user->getEmail()}' readonly/>
+					</form>\n";
+				}
+			}
+		}
 	} // class
 ?>
