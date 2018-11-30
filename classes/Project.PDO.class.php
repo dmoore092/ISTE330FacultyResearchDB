@@ -132,7 +132,6 @@
                 $html = "<table>\n";
                 if($editable){
                     $html .= "<tr><th>Project Name</th><th>Project Lead</th><th>Email</th><th>Project Description</th><th></th></tr>";
-                    var_dump($data);
                     foreach($data as $project){
                         $html .= "<form action= 'myProjects.php' method='post'>
                         <tr>
@@ -148,6 +147,7 @@
                         </tr></form>\n";
                     }
                 }else{
+                    var_dump($data);
                     $html .= "<tr><th>Project Name</th><th>Project Lead</th><th>Email</th><th>Project Description</th></tr>";
                     foreach($data as $project){
                         $html .= "<tr>
