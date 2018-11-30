@@ -12,7 +12,8 @@
   echo "<h1 class='title'>Find Projects</h1>";
 
   echo "<form> 
-          <input type='text' name='firstname' value='Mickey'><br>
+          Search: <input type='text' name='search'><br>
+          <input type='text' id='custId' name='custId' placeholder='Search here'>
           <input type='submit' value='Submit'>
         </form>";
 
