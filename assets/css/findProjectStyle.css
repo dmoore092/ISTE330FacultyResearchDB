@@ -1,9 +1,9 @@
 
 table{
-    width: 1000px;
+    width: 60%;
     margin: auto; 
     background-color: #3d454f;
-    border: 50px solid #3d454f;
+    border: 25px solid #3d454f;
     border-radius: 25px;
 }
 th:nth-of-type(2){
