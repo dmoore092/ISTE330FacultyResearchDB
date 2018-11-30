@@ -52,28 +52,28 @@
                         $id = $val;
 						break;
 					case 'username':
-                        $this->updateField('user', 'username', $val, $id);
+                        echo $this->updateField('user', 'username', $val, $id);
                         break;
                     case 'password':
                         $this->updateField('user', 'password', $val, $id);
                         break;
                     case 'name':
-                        $this->updateField('user', 'name', $val, $id);
+                        echo $this->updateField('user', 'name', $val, $id);
                         break;
                     case 'tagline':
-                        $this->updateField('user', 'tagline', $val, $id);
+                        echo $this->updateField('user', 'tagline', $val, $id);
 						break;
 					case 'imagepath':
-                        $this->updateField('user', 'imagepath', $val, $id);
+                        $this->updateField('user', 'imagePath', $val, $id);
                         break;
                     case 'title':
-                        $this->updateField('user', 'title', $val, $id);
+                        echo $this->updateField('user', 'title', $val, $id);
                         break;
                     case 'interestArea':
-                        $this->updateField('user', 'interestArea', $val, $id);
+                        echo $this->updateField('user', 'interestArea', $val, $id);
 						break;		
 					case 'office':
-                        $this->updateField('user', 'office', $val, $id);
+                        echo $this->updateField('user', 'office', $val, $id);
                         break;
                     case 'website':
                         $this->updateField('user', 'website', $val, $id);
@@ -133,7 +133,7 @@
 					$html .= "<form class='infoForm' action='myInfo.php' method='post'>
 					<div class='myinfo-form'>
 					
-					<input type='hidden' name='id' value='{$id}'/>
+					<input type='hidden' name='id' value='$id'/>
 
 					<label for='name'>Name: </label>
 					<input type='text' name='name' value='{$user->getName()}'/>
