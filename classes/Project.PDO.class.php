@@ -43,11 +43,13 @@
 		/**
 		 * getProjectsByFacultyName - gets all the projects associated with the indicated faculty member
 		 */
-		function getProjectsByUser($fullname){
+		function getProjectsByUser($fullname, $projectLead){
 			try{
                 $data = array();
-                $stmt = $this->dbConn->prepare("select distinct projectName, projectLead, email, projectDescription, u.id from project p join user u where p.id = u.id AND u.name = :fullname"); 
-                $stmt->bindParam("fullname",$fullname,PDO::PARAM_STR, 150);    
+                //$stmt = $this->dbConn->prepare("select distinct projectName, projectLead, email, projectDescription, u.id from project p join user u where p.id = u.id AND u.name = :fullname"); 
+                $stmt = $this->dbConn->prepare("select distinct projectName, projectLead, projectDescription, id from project WHERE name = :projectLead UNION select email from user where name = :fullname");//delete this if doesn't work
+                $stmt->bindParam("fullname",$fullname,PDO::PARAM_STR, 150); 
+                $stmt->bindParam("fullname",$projectLead,PDO::PARAM_STR, 150); //delete this if doesn't work
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
                 while($databaseProjects = $stmt->fetch()){

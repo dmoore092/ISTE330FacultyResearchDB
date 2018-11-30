@@ -45,7 +45,7 @@ session_name("user");
 
     switch($_SESSION['role']){
       case 1:
-        $data = $projectDB->getProjectsByUser($_SESSION['fullname']);
+        $data = $projectDB->getProjectsByUser($_POST['project_lead'], $_SESSION['fullname']);//change project lead if fails
         echo $projectDB->getProjectsAsTable(true, $data);
       break;
       case 2:
