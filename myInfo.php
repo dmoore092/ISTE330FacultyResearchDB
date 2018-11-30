@@ -22,7 +22,7 @@
 
 
         }
-        echo "<main><h1 class='title'>My Information</h1>";
+
         switch($_SESSION['role']) {
           case 1:
             echo "<h1>I am a professor.</h1>";
@@ -37,7 +37,12 @@
           echo "<h2>Not logged in</h2>";
         //header("Location: ./login.php");
       }
-      echo "</main>";
+?>
+<main>
+    <h1 class="title">My Information</h1>
+</main>
 
+
+<?php
   include_once 'assets/inc/footer.php';
 ?>
