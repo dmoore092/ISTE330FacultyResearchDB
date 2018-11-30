@@ -1,0 +1,36 @@
+.infoForm {
+    width: 60%;
+    padding-top: 14em;
+    margin-left: 20%;
+    margin-right: 20%;
+    min-width: 480px;
+  }
+  
+.myinfo-form {
+    padding: 1rem 1.5em;
+    border-radius: .5rem;
+    background-color: #3d454f;
+}
+
+.myinfo-form h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.myinfo-form label {
+    text-transform: uppercase;
+    color: #adadad;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.myinfo-form output {
+    color: rgb(48, 48, 48);
+}
+
+.myinfo-form output:focus {
+    opacity: .8;
+}
