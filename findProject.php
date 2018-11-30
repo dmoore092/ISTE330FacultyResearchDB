@@ -12,7 +12,7 @@
   echo "<h1 class='title'>Find Projects</h1>";
 
   echo "<form> 
-          Search: <input type='text' name='search'><br>
+          <label>Search here</label>
           <input type='text' id='custId' name='custId' placeholder='Search here'>
           <input type='submit' value='Submit'>
         </form>";
