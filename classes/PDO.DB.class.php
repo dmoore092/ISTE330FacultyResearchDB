@@ -131,7 +131,7 @@
             var_dump($className);
             var_dump($id);
             $object = null;
-            $query = "SELECT * FROM $tablename WHERE id = :id";
+            $query = "SELECT * FROM $table WHERE id = :id";
             $stmt = $this->dbConn->prepare($query);
             $stmt->bindParam(":id", $id);
             $stmt->execute();
