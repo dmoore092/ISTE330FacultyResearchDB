@@ -37,7 +37,7 @@ aside div {
     margin: auto;
     margin-bottom: 1em;
     bottom: 50px;
-    z-index: -1;
+    z-index: 1;
     /*transform: translate(-50%, -50%);*/
 }
 aside div:hover{
