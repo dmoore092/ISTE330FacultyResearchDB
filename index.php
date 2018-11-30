@@ -26,7 +26,7 @@
         </div><!--End of #welcomeInfo -->
         <aside>
             <h3>Research Highlights</h3>
-            <div id="img1"><a href="findProject.php" ><img src="assets/media/images/research1.jpg"></a></div>
+            <span id="img1"><a href="findProject.php" ><img src="assets/media/images/research1.jpg"></a></span>
             <a href="findProject.php" ><div class="appear1">IT Fluency in Non-human Primates</div></a>
             <a href="findProject.php" ><img src="assets/media/images/research2.jpg"></a>
             <a href="findProject.php" ><div class="appear2">SOAP: not just for cleaning anymore</div></a>
