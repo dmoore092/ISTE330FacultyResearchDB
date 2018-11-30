@@ -39,7 +39,7 @@ aside .appear {
     bottom: 50px;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0s, opacity 0.2s linear;
 }
 #img1:hover .appear1 {
     visibility: visible;
