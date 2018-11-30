@@ -120,8 +120,9 @@
 		}
 
 		function getMyInfo($editable=false, $id) {
-			$user = $dbConn->getObjectByID("user", "User", $id);
+			$user = $this->dbConn->getObjectByID("user", "User", $id);
 			if ($user != null) {
+				$html = "";
 				if ($editable) {
 					$html .= "<form class='infoForm' action='myInfo.php' method='post'>
 					<div class='myinfo-form'>
