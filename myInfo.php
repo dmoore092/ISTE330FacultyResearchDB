@@ -25,11 +25,9 @@
         echo "<main><h1 class='title'>My Information</h1>";
         switch($_SESSION['role']) {
           case 1:
-            echo "<h1>I am a professor.</h1>";
             echo $userDB->getMyInfo(true, $_SESSION['id']);
           break;
           case 2:
-          echo "<h1>I am a student.</h1>";
           echo $userDB->getMyInfo(false, $_SESSION['id']);
           break;
         }
