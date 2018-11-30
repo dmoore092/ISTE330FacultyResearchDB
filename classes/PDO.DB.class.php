@@ -127,20 +127,14 @@
         }
 
         function getObjectByID($table, $className, $id){
-            var_dump($table);
-            var_dump($className);
-            var_dump($id);
             $object = null;
-            $query = "SELECT * FROM :table WHERE id = :id";
+            $query = "SELECT * FROM $table WHERE id = :id";
             $stmt = $this->dbConn->prepare($query);
-            $stmt->bindParam(":table", $table);
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
-            $data = $stmt->fetch();
-            if($data != null){
-                $object = $data[0];
-            }
+            $object = $stmt->fetch();
+            
             return $object;
         }
 

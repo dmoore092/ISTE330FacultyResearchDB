@@ -120,10 +120,7 @@
 		}
 
 		function getMyInfo($editable=false, $id) {
-			$user = $this->getObjectByID("user", "User", $id);
-
-			var_dump($id);
-			var_dump($user);
+			$user = $this->getObjectByID('user', 'User', $id);
 			if ($user != null) {
 				$html = "";
 				if ($editable) {
@@ -175,6 +172,7 @@
 						</div>
 					</form>\n";
 				}
+				return $html;
 			}
 		}
 	} // class
