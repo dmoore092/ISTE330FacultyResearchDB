@@ -37,9 +37,14 @@ aside div {
     margin: auto;
     margin-bottom: 1em;
     bottom: 50px;
-    z-index: 1;
+    z-index: -1;
     /*transform: translate(-50%, -50%);*/
 }
 aside div:hover{
-    
+    z-index: 1;
+    -webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
 }
