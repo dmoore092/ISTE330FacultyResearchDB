@@ -22,7 +22,6 @@
 
 
         }
-      echo "<main><h1 class='title'>My Information</h1>";
 
         switch($_SESSION['role']) {
           case 1:
