@@ -29,6 +29,9 @@ aside img{
 aside h3{
     margin-top: 3em;
 }
+aside a{
+    color: white;
+}
 aside .appear {
     position:relative;
     background-color: orange;
