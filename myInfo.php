@@ -5,14 +5,16 @@
     $page = "myInfo";
 
     include "assets/inc/header.inc.php";
+    
+    include_once "classes/User.PDO.class.php";
     include_once 'assets/inc/nav.php';
 
-    $DB = new DB();
+    $userDB = new UserDB();
 
     if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
         
         if (isset($_GET['logout'])) {
-          $DB->logout();
+          $userDB->logout();
         }
 
         if(isset($_POST['updateUserInfo'])) {
@@ -24,11 +26,11 @@
         switch($_SESSION['role']) {
           case 1:
             echo "<h1>I am a professor.</h1>";
-            echo $DB->getMyInfo(true, $user);
+            echo $userDB->getMyInfo(true, $user);
           break;
           case 2:
           echo "<h1>I am a student.</h1>";
-          echo $DB->getMyInfo(false, $user);
+          echo $userDB->getMyInfo(false, $user);
           break;
         }
       } else {
