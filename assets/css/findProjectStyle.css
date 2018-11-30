@@ -18,11 +18,13 @@ input::placeholder{
 }
 
 #btn-search{
+ margin-bottom: 50px;
  float:right;   
 }
 
 #search-box{
     float:left;
+    width: 57%;
 }
 
 
