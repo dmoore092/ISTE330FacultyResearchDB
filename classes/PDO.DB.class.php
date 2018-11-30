@@ -55,15 +55,12 @@
         function updateField($tableName, $fieldName, $value, $id){
             $ra = -1;
             try{
-                $query = "UPDATE :table SET :column = :value WHERE id = :id";
+                $query = "UPDATE $tableName SET $fieldName = :value WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
-                $stmt->bindParam(array(
-                    ":table"=>$tableName,
-                    ":column"=>$fieldName,
+                $stmt->execute(array(
                     ":value"=>$value,
                     ":id"=>$id
                 ));
-                $ra = $stmt->execute();
             }catch(PDOException $e){
                 return "A problem occurred updating $tableName";
             }
@@ -74,7 +71,6 @@
          * delete() - deletes any entry for any table
          */
         function delete($tableName, $id){
-            $ra = -1;
             try{
                 $query = "DELETE FROM :tableName WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
@@ -86,7 +82,6 @@
             }catch(PDOException $e){
                 return "A problem occurred deleting from $tableName";
             }
-            return $ra;
         }
 
         /**
@@ -132,5 +127,29 @@
             }
             return $data;
         }
+
+	function sanitize($value){
+		$value = trim($value);
+		$value = stripslashes($value);
+		$value = strip_tags($value);
+		$value = htmlentities($value);
+		return $value;
+	}
+
+	function isAlphabetic($value){
+		$reg = "/^[a-zA-Z] [a-zA-Z ]+$/";
+		return preg_match($reg, $value);
+	}
+
+	function isAlphaNumeric($value){
+		$reg = "/^[a-zA-Z0-9 ]+$/";
+		return preg_match($reg, $value);
+	}
+
+	function isNumeric($value){
+		$reg = "/^[0-9]*$/";
+		return preg_match($reg, $value);
+	}
+
     } // class
 ?>

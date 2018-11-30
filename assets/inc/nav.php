@@ -1,5 +1,4 @@
-<?php
-?>
+<?php ?>
 <!-- NAVIGATION-->
 <nav class="hover-underline-menu" data-menu-underline-from-center>
     <ul class="menu align-center">
