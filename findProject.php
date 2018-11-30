@@ -30,6 +30,7 @@
         }
         if(isset($_POST['project_lead'])){
           if($projectDB->isAlphabetic($_POST['project_lead']) != 0){
+            echo "<h2>in the project lead</h2>";
             $updateArray['project_lead'] = $projectDB->sanitize($_POST['project_lead']);
           }
         }
