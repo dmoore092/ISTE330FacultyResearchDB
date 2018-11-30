@@ -28,10 +28,10 @@
             <h3>Research Highlights</h3>
             <div id="img1"><img src="assets/media/images/research1.jpg">
                 <a href="findProject.php" ><div class="appear appear1">IT Fluency in Non-human Primates</div></a></div>
-            <img src="assets/media/images/research2.jpg">
-            <a href="findProject.php" ><div class="appear appear2">SOAP: not just for cleaning anymore</div></a>
-            <img src="assets/media/images/research3.jpg">
-            <a href="findProject.php" ><div class="appear appear3">Java or PHP? Lets see that back end</div>
+            <div id="img2"><img src="assets/media/images/research2.jpg">
+                <a href="findProject.php" ><div class="appear appear2">SOAP: not just for cleaning anymore</div></a></div>
+            <div id="img3"><img src="assets/media/images/research3.jpg">
+                <a href="findProject.php" ><div class="appear appear3">Java or PHP? Lets see that back end</div></a>
         </aside>
     </main>
 <?php include_once 'assets/inc/footer.php'; ?>

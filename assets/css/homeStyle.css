@@ -41,15 +41,15 @@ aside .appear {
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
 }
-div:hover .appear1 {
+#img1:hover .appear1 {
     visibility: visible;
     opacity: 1;
 }
-aside:hover .appear2 {
+#img2:hover .appear2 {
     visibility: visible;
     opacity: 1;
 }
-aside:hover .appear3 {
+#img3:hover .appear3 {
     visibility: visible;
     opacity: 1;
 }
