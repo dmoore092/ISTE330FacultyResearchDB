@@ -152,7 +152,7 @@
                         $html .= "<tr>
                             <td>{$project->getProjectName()}</td>
                             <td>{$project->getProjectLead()}</td>
-                            <td><a href='mailto:{$project->getEmail()}'>test</a></td>
+                            <td><a href='mailto:{$project->getEmail()}'>{$project->getEmail()}</a></td>
                             <td>{$project->getDescription()}</td>
         
                         </tr>";
