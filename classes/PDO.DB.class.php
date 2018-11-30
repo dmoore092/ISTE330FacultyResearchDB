@@ -130,6 +130,7 @@
             $object = null;
             $query = "SELECT * FROM :table WHERE id=:id";
             $stmt = $this->dbConn->prepare($query);
+            $stmt->bindParam(":table", $table);
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
