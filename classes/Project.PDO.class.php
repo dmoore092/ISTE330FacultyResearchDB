@@ -117,10 +117,10 @@
                         echo $this->updateField('project', 'projectName', $val, $id);
                         break;
                     case 'project_lead':
-                        $this->updateField('project', 'projectLead', $val, $id);
+                        echo $this->updateField('project', 'projectLead', $val, $id);
                         break;
                     case 'project_desc':
-                        $this->updateField('project', 'projectDescription', $val, $id);
+                        echo $this->updateField('project', 'projectDescription', $val, $id);
                         break;
                 }
             }
