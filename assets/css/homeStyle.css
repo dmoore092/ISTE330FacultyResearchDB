@@ -29,7 +29,7 @@ aside img{
 aside h3{
     margin-top: 3em;
 }
-aside div {
+aside .appear1 {
     position:relative;
     background-color: orange;
     padding: 5px;
@@ -41,7 +41,7 @@ aside div {
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
 }
-aside:hover .appear1 {
+#img1:hover .appear1 {
     visibility: visible;
     opacity: 1;
 }
