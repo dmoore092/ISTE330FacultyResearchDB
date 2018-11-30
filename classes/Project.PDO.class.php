@@ -130,13 +130,14 @@
             if($data != null && count($data) > 0){
                 $html = "<table>\n";
                 if($editable){
-                    $html .= "<tr><th>Project Name</th><th>Project Lead</th><th>Project Description</th><th></th></tr>";
+                    $html .= "<tr><th>Project Name</th><th>Project Lead</th><th>Email</th><th>Project Description</th><th></th></tr>";
                     foreach($data as $project){
                         $html .= "<form action= 'myProjects.php' method='post'>
                         <tr>
                             <input type='hidden' name='project_id' value='{$project->getId()}'/>
                             <td><input type='text' name='project_name' placeholder='{$project->getProjectName()}'/></td>
                             <td><input type='text' name='project_lead' placeholder='{$project->getProjectLead()}'/></td>
+                            <td><input type='text' name='project_lead' placeholder='{$project->getEmail()}'/></td>
                             <td><input type='text' name='project_desc' placeholder='{$project->getDescription()}'/></td>
                             <td>
                                 <input type='submit' name='updateProject' value='Update'/>
@@ -145,11 +146,12 @@
                         </tr></form>\n";
                     }
                 }else{
-                    $html .= "<tr><th>Project Name</th><th>Project Lead</th><th>Project Description</th></tr>";
+                    $html .= "<tr><th>Project Name</th><th>Project Lead</th><th>Email</th><th>Project Description</th></tr>";
                     foreach($data as $project){
                         $html .= "<tr>
                             <td>{$project->getProjectName()}</td>
                             <td>{$project->getProjectLead()}</td>
+                            <td>{$project->getEmail()}</td>
                             <td>{$project->getDescription()}</td>
         
                         </tr>";
