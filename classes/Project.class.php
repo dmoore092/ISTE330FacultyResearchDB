@@ -8,6 +8,7 @@
 		private $id;
 		private $projectName;
 		private $projectLead;
+        private $email;
 		private $projectDescription;
 		
 		/**
@@ -36,6 +37,13 @@
 		 */
 		public function getDescription(){
 			return $this->projectDescription;
+		}
+        
+        /**
+		 * getEmail() - returns the email
+		 */
+		public function getEmail(){
+			return $this->email;//DELETE This if it doesn't work!!!!!!!!!
 		}
 	}
 ?>
