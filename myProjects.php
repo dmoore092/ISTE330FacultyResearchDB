@@ -37,6 +37,12 @@ session_name("user");
       $projectDB->updateProject($updateArray);
     }
 
+    if(isset($_POST['deleteProject'])){
+      if(isset($_POST['project_id'])){
+        $projectDB->delete('project', $_POST['project_id']);
+      }
+    }
+
     switch($_SESSION['role']){
       case 1:
         $data = $projectDB->getProjectsByFacultyName($_SESSION['fullname']);
