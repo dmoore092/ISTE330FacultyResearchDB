@@ -45,6 +45,7 @@
 		function getProjectsByFacultyName($fullname){
 			try{
                 $data = array();
+                var_dump($fullname);
                 $stmt = $this->dbConn->prepare("select * from project where projectLead = :fullname"); 
                 $stmt->bindParam("fullname",$fullname,PDO::PARAM_STR, 150);    
                 var_dump($stmt);
