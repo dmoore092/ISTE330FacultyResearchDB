@@ -170,16 +170,18 @@
         }
 
         function displayInsertForm(){
-            $html = "<form action = 'myProjects.php' method='post'>
-            <tr>
-                <td><input type='text' name='project_name' placeholder='Project Name'/></td>
-                <td><input type='text' name='project_lead' placeholder='Project Lead'/></td>
-                <td><input type='text' name='project_desc' placeholder='Project Description'/></td>
-                <td>
-                    <input type='submit' name='insertProject' value='Insert'/>
-                </td>
-            </tr>
-            </form>";
+            $html = "<table>
+                <form action ='myProjects.php' method='post'>
+                    <tr>
+                    <td><input type='text' name='project_name' placeholder='Project Name'/></td>
+                    <td><input type='text' name='project_lead' placeholder='Project Lead'/></td>
+                    <td><input type='text' name='project_desc' placeholder='Project Description'/></td>
+                    <td>
+                        <input type='submit' name='insertProject' value='Insert'/>
+                    </td>
+                </tr>
+                </form>
+            </table>";
             return $html;
         }
 	}  
