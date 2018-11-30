@@ -9,7 +9,18 @@ table{
 th:nth-of-type(2){
     width: 200px;
 }
-::placeholder{
-    color: black;
-    opacity: 1;
+::-webkit-input-placeholder {
+    color:black;
+}
+
+::-moz-placeholder {
+    color:black;
+}
+
+::-ms-placeholder {
+    color:black;
+}
+
+::placeholder {
+    color:black;
 }
