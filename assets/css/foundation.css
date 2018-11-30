@@ -1357,7 +1357,12 @@ h6 {
   h1 {
     font-size: 3rem; }
   h2 {
-    font-size: 2.5rem; }
+    font-size: 2.5rem;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 25%;
+  }
   h3 {
     font-size: 1.9375rem; }
   h4 {
