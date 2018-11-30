@@ -73,7 +73,7 @@
                 $query = "DELETE FROM :tableName WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
                 $stmt->bindParam(array(
-                    ":table"=>$tableName,
+                    ":tableName"=>$tableName,
                     ":id"=>$id
                 ));
                 $ra = $stmt->execute();
