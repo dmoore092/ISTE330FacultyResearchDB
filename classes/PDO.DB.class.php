@@ -112,7 +112,7 @@
             $data = array();
             try{
                 //$query = "SELECT * FROM $tableName";
-                $query = "SELECT projectName, projectLead, email, projectDescription  FROM $tableName p JOIN user u WHERE p.id = u.id";
+                $query = "SELECT projectName, u.name, email, projectDescription  FROM $tableName p JOIN user u WHERE p.id = u.id";
                 $stmt = $this->dbConn->prepare($query);
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
@@ -161,17 +161,7 @@
     }
     
     function isValidEmail($value){
-        $reg = "/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/";
-        return preg_match($reg, $value);
-    }
-
-    function isValidWebsite($value){
-        $reg = "/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/";
-        return preg_match($reg, $value);
-    }
-
-    function isValidPhone($value){
-        $reg = "/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/";
+        $reg = "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$";
         return preg_match($reg, $value);
     }
 
