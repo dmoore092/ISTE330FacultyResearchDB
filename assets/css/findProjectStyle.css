@@ -3,9 +3,12 @@ table{
     width: 1000px;
     margin: auto; 
     background-color: #3d454f;
-    border: 10px solid 3d454f;
+    border: 10px solid #3d454f;
 }
 th:nth-of-type(2){
     width: 200px;
+}
+tr:nth-child(even) {
+    background-color: #3d454f;
 }
 
