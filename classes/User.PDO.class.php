@@ -44,11 +44,15 @@
 		 * updateUser() - Takes in an associative array where the key is the field name and the value is the value to be updated for that field, then updates them
 		 */
 		function updateUser($updateArray){
+			var_dump($updateArray);
 			$id = '';
             foreach($updateArray as $key=>$val){
                 switch($key){
-                    case "username": // case will be the name of the form field the user types in
+                    case "id": // case will be the name of the form field the user types in
                         $id = $val;
+						break;
+					case 'username':
+                        $this->updateField('user', 'username', $val, $id);
                         break;
                     case 'password':
                         $this->updateField('user', 'password', $val, $id);
@@ -124,9 +128,13 @@
 
 			if ($user != null) {
 				$html = "";
+				//If it is editable, the hidden field will always supply the ID whenever the update method is called.
 				if ($editable) {
 					$html .= "<form class='infoForm' action='myInfo.php' method='post'>
 					<div class='myinfo-form'>
+					
+					<input type='hidden' name='id' value='{$id}'/>
+
 					<label for='name'>Name: </label>
 					<input type='text' name='name' value='{$user->getName()}'/>
 					<label for='username'>Username: </label>

@@ -5,7 +5,6 @@
     $page = "myInfo";
 
     include "assets/inc/header.inc.php";
-    
     include_once "classes/User.PDO.class.php";
     include_once 'assets/inc/nav.php';
 
@@ -18,57 +17,59 @@
         }
 
         if(isset($_POST['updateUserInfo'])) {
-
             $updateArray = array();
-
-            if(isset($_POST['name'])){
-                if($userDB->isAlphaNumeric($_POST['name']) != 0){
-                    $updateArray['name'] = $userDB->sanitize($_POST['name']);
+            if(isset($_POST['id'])){
+                if(isset($_POST['name'])){
+                    if($userDB->isAlphaNumeric($_POST['name']) != 0){
+                        $updateArray['name'] = $userDB->sanitize($_POST['name']);
+                    }
                 }
-            }
-            if(isset($_POST['username'])){
-                if($userDB->isAlphaNumeric($_POST['username']) != 0){
-                    $updateArray['username'] = $userDB->sanitize($_POST['username']);
+                if(isset($_POST['username'])){
+                    if($userDB->isAlphaNumeric($_POST['username']) != 0){
+                        $updateArray['username'] = $userDB->sanitize($_POST['username']);
+                    }
                 }
-            }
-            if(isset($_POST['title'])){
-                if($userDB->isAlphaNumeric($_POST['title']) != 0){
-                    $updateArray['title'] = $userDB->sanitize($_POST['title']);
+                if(isset($_POST['title'])){
+                    if($userDB->isAlphaNumeric($_POST['title']) != 0){
+                        $updateArray['title'] = $userDB->sanitize($_POST['title']);
+                    }
                 }
-            }
-            if(isset($_POST['tagline'])){
-                if($userDB->isAlphaNumeric($_POST['tagline']) != 0){
-                    $updateArray['tagline'] = $userDB->sanitize($_POST['tagline']);
+                if(isset($_POST['tagline'])){
+                    if($userDB->isAlphaNumeric($_POST['tagline']) != 0){
+                        $updateArray['tagline'] = $userDB->sanitize($_POST['tagline']);
+                    }
                 }
-            }
-            if(isset($_POST['interestArea'])){
-                if($userDB->isAlphaNumeric($_POST['interestArea']) != 0){
-                    $updateArray['interestArea'] = $userDB->sanitize($_POST['interestArea']);
+                if(isset($_POST['interestArea'])){
+                    if($userDB->isAlphaNumeric($_POST['interestArea']) != 0){
+                        $updateArray['interestArea'] = $userDB->sanitize($_POST['interestArea']);
+                    }
                 }
-            }
-            if(isset($_POST['office'])){
-                if($userDB->isAlphaNumeric($_POST['office']) != 0){
-                    $updateArray['office'] = $userDB->sanitize($_POST['office']);
+                if(isset($_POST['office'])){
+                    if($userDB->isAlphaNumeric($_POST['office']) != 0){
+                        $updateArray['office'] = $userDB->sanitize($_POST['office']);
+                    }
                 }
-            }
-            if(isset($_POST['website'])){
-                if($userDB->isValidWebsite($_POST['website']) != 0){
-                    $updateArray['website'] = $userDB->sanitize($_POST['website']);
+                if(isset($_POST['website'])){
+                    if($userDB->isValidWebsite($_POST['website']) != 0){
+                        $updateArray['website'] = $userDB->sanitize($_POST['website']);
+                    }
                 }
-            }
-            if(isset($_POST['phone'])){
-                if($userDB->isValidPhone($_POST['phone']) != 0){
-                    $updateArray['phone'] = $userDB->sanitize($_POST['phone']);
+                if(isset($_POST['phone'])){
+                    echo "<h2>Checking phone number.</h2>";
+                    if($userDB->isValidPhone($_POST['phone']) != 0){
+                        echo "<h2>Phone number was valid.</h2>";
+                        $updateArray['phone'] = $userDB->sanitize($_POST['phone']);
+                    }
                 }
-            }
-            if(isset($_POST['email'])){
-                if($userDB->isValidEmail($_POST['email']) != 0){
-                    $updateArray['email'] = $userDB->sanitize($_POST['email']);
+                if(isset($_POST['email'])){
+                    echo "<h2>Checking e-mail</h2>";
+                    if($userDB->isValidEmail($_POST['email']) != 0){
+                        echo "<h2>The email was valid.</h2>";
+                        $updateArray['email'] = $userDB->sanitize($_POST['email']);
+                    }
                 }
+                $userDB->updateUser($updateArray);
             }
-
-            $userDB->updateUser($updateArray);
-
         }
 
         switch($_SESSION['role']) {
