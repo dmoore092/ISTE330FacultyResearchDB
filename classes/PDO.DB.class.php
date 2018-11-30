@@ -112,7 +112,7 @@
             $data = array();
             try{
                 //$query = "SELECT * FROM $tableName";
-                $query = "SELECT projectName, u.name, email, projectDescription  FROM $tableName p JOIN user u WHERE p.id = u.id";
+                $query = "SELECT projectName, user.name, email, projectDescription  FROM $tableName p JOIN user u WHERE p.projectLead = u.id";
                 $stmt = $this->dbConn->prepare($query);
                 $stmt->execute();
                 $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
