@@ -11,6 +11,14 @@
 
   echo "<h1 class='title'>Find Projects</h1>";
 
+  echo "<form>
+    <label for="firstname">First Name:</label>
+      <input type="text" name="firstname" placeholder="Mickey">
+      <br>
+      <input type="submit" value="Submit">
+    </form>"
+  
+
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
 
     if(isset($_GET['logout'])) {
