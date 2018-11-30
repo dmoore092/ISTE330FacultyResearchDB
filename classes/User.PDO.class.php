@@ -146,7 +146,7 @@
 					<label for='email'>Email: </label>
 					<input type='text' name='email' value='{$user->getEmail()}'/>
 
-					<input type='submit' name='updateUser' value='Update'/>
+					<input type='submit' name='updateUserInfo' value='Update'/>
 					</div>
 					</form>\n";
 				} else {
