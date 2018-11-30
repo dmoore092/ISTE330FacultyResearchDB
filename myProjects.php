@@ -50,7 +50,7 @@ session_name("user");
       break;
       case 2:
         // echo "<h3 class='title'>You must be a professor to access this page.</h3><br/><a href='find.php'>Find projects.</a>";
-        $data = $projectDB->getProjectsByUser($_SESSION['fullname']);
+        $data = $projectDB->getProjectsByUser($_SESSION['id']);
         echo $projectDB->getProjectsAsTable(false, $data);
       break;
     }
