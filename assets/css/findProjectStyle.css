@@ -9,18 +9,4 @@ table{
 th:nth-of-type(2){
     width: 200px;
 }
-::-webkit-input-placeholder {
-    color:black;
-}
 
-::-moz-placeholder {
-    color:black;
-}
-
-::-ms-placeholder {
-    color:black;
-}
-
-::placeholder {
-    color:black;
-}
