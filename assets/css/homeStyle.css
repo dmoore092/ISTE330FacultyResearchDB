@@ -41,7 +41,7 @@ aside div {
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
 }
-aside div:hover{
+aside:hover > div{
     visibility: visible;
     opacity: 1;
 }
