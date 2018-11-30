@@ -43,7 +43,7 @@
 		/**
 		 * getProjectsByFacultyName - gets all the projects associated with the indicated faculty member
 		 */
-		function getProjectsByUser($fullname, $projectLead){
+		function getProjectsByUser($fullname){
 			try{
                 $data = array();
                 //$stmt = $this->dbConn->prepare("select distinct projectName, projectLead, email, projectDescription, u.id from project p join user u where p.id = u.id AND u.name = :fullname"); 
