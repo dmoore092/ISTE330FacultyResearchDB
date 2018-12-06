@@ -128,6 +128,7 @@
                 }
             }
 	}  
+	    
         function getProjectsAsTable($editable=false, $data=null){
             //$data = $this->getEverythingAsObjects("project", "Project");
             if($data != null && count($data) > 0){
@@ -182,5 +183,23 @@
             </table>";
             return $html;
         }
-	}  
+	    
+	function searchProjects($name){
+		try{
+                	$data = array();
+               		$stmt = $this->dbConn->prepare("select * from project where projectName LIKE %:name%"); 
+                	$stmt->bindParam(":name",$name,PDO::PARAM_STR, 150);    
+                	$stmt->execute();
+                	$stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
+                	while($databaseProjects = $stmt->fetch()){
+                    		$data[] = $databaseProjects;
+                	}
+                	return $data;
+            	}
+            	catch(PDOException $e){
+                	echo $e->getMessage();
+                	throw new Exception("Problem searching for projects in the database.");
+            	}
+	}
+}  
 ?>
