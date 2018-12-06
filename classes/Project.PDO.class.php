@@ -190,7 +190,7 @@
 		try{
 			$name = "%".$name."%";
                 	$data = array();
-               		$stmt = $this->dbConn->prepare("SELECT DISTINCT projectName, projectDescription, user.name, user.email  FROM project JOIN user ON project.projectLead = user.id WHERE user.role =  1 AND projectName LIKE :name"); 
+               		$stmt = $this->dbConn->prepare("SELECT DISTINCT projectName, projectDescription, name AS 'projectLead', email AS 'email' FROM project JOIN user ON project.projectLead = user.id WHERE user.role =  1 AND projectName LIKE :name"); 
                 	$stmt->bindParam(":name", $name, PDO::PARAM_STR, 150);    
                 	$stmt->execute();
                 	$stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
