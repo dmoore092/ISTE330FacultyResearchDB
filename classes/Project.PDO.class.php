@@ -170,7 +170,7 @@
 
         function displayInsertForm(){
             $html = "
-                <h3>Add A New Project</h3>
+                <h1 id='addnew'>Add A New Project</h1>
                 <table>
                 <form action ='myProjects.php' method='post'>
                     <tr>
