@@ -27,6 +27,8 @@ input::placeholder{
     float:left;
     width: 90%;
 }
-
+#addnew{
+    margin-left: auto;
+}
 
 
