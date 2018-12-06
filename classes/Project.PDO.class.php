@@ -190,7 +190,7 @@
 		try{
 			$name = "%".$name."%";
                 	$data = array();
-               		$stmt = $this->dbConn->prepare("select projectName, projectLead AS name, email, projectDescription from project JOIN user WHERE project.projectLead = user.id AND projectName LIKE :name"); 
+               		$stmt = $this->dbConn->prepare("select projectName, projectLead, email, projectDescription from project JOIN user WHERE project.name = user.name AND projectName LIKE :name"); 
                 	$stmt->bindParam(":name", $name, PDO::PARAM_STR, 150);    
                 	$stmt->execute();
                 	$stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
