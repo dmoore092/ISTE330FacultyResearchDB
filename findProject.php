@@ -30,7 +30,7 @@
     echo "<h3>In the search.</h3>";
       if(isset($_POST['searchVal']) && $projectDB->isAlphaNumeric($_POST['searchVal']) != 0){
         $val = $projectDB->sanitize($_POST['searchVal']);
-        $data = $projectDB->searchProject($val);
+        $data = $projectDB->searchProjects($val);
       }
     }else{
       $data = $projectDB->getEverythingAsObjects("project", "Project");
