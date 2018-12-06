@@ -11,27 +11,31 @@
 
   echo "<h1 class='title'>Find Projects</h1>";
 
-  echo "<form> 
+  echo "<form action='findProject.php'> 
           <div id='search-container'>
-            <input type='text' id='search-box' name='custId' placeholder='Search here'>
-            <input id = 'btn-search' type='submit' value='Submit'>
+            <input type='text' id='search-box' name='searchVal' placeholder='Search here'>
+            <input id= 'btn-search' name='search' type='submit' value='Submit'>
           </div> 
         </form>";
 
 
   if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']){
-
     if(isset($_GET['logout'])) {
       $projectDB->logout();
     }
-      
-        $data = $projectDB->getEverythingAsObjects("project", "Project");
-        echo $projectDB->getProjectsAsTable(false, $data);
-    
-  }else{
-    $data = $projectDB->getEverythingAsObjects("project", "Project");
-    echo $projectDB->getProjectsAsTable(false, $data);
   }
+
+   $data = null;
+   if(isset($_POST['search']){
+      if(isset($_POST['searchVal'] && isAlphaNumeric($_POST['searchVal']) != 0){
+        $val = $projectDB->sanitize($_POST['searchVal']);
+        $data = $projectDB->searchProject($val);
+      }
+    }else{
+      $data = $projectDB->getEverythingAsObjects("project", "Project");
+    }
+         
+    echo $projectDB->getProjectsAsTable(false, $data);
 
   include_once 'assets/inc/footer.php';
 ?>
