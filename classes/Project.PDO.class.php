@@ -190,7 +190,7 @@
 		try{
                 	$data = array();
                		$stmt = $this->dbConn->prepare("select * from project where projectName LIKE %:name%"); 
-                	$stmt->bindParam(":name",$name,PDO::PARAM_STR, 150);    
+                	$stmt->bindParam(":name", $name, PDO::PARAM_STR, 150);    
                 	$stmt->execute();
                 	$stmt->setFetchMode(PDO::FETCH_CLASS,"Project");
                 	while($databaseProjects = $stmt->fetch()){
