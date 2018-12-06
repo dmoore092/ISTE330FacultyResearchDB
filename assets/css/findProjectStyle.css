@@ -31,5 +31,7 @@ input::placeholder{
     margin-left: 40%;
     margin-top: 7%;
 }
-
+.errorMsg{
+    margin-top: 20%;
+}
 
