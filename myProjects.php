@@ -35,6 +35,7 @@ session_name("user");
           }
         }
       }
+      $var_dump($updateArray);
       $projectDB->updateProject($updateArray);
     }
 
