@@ -27,7 +27,6 @@
 
    $data = null;
    if(isset($_POST['search'])){
-    echo "<h3>In the search.</h3>";
       if(isset($_POST['searchVal']) && $projectDB->isAlphaNumeric($_POST['searchVal']) != 0){
         $val = $projectDB->sanitize($_POST['searchVal']);
         $data = $projectDB->searchProjects($val);
@@ -35,7 +34,6 @@
     }else{
       $data = $projectDB->getEverythingAsObjects("project", "Project");
     }
-    var_dump($data);
     echo $projectDB->getProjectsAsTable(false, $data);
 
   include_once 'assets/inc/footer.php';
