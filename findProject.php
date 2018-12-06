@@ -11,7 +11,7 @@
 
   echo "<h1 class='title'>Find Projects</h1>";
 
-  echo "<form action='findProject.php'> 
+  echo "<form action='findProject.php' method='POST'> 
           <div id='search-container'>
             <input type='text' id='search-box' name='searchVal' placeholder='Search here'>
             <input id= 'btn-search' name='search' type='submit' value='Submit'>
