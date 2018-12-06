@@ -13,6 +13,7 @@ session_name("user");
     }
 
     if(isset($_POST['updateProject'])){
+      var_dump($_POST);
       $updateArray = array();
       if(isset($_POST['project_id'])){
         $updateArray['project_id'] = $_POST['project_id'];
@@ -44,6 +45,7 @@ session_name("user");
     }
 
     if(isset($_POST['insertProject'])){
+      var_dump($_POST);
       $projectName = $projectDB->sanitize($_POST['new_project_name']);
       $projectLead = $projectDB->sanitize($_POST['new_project_lead']);
       $projectDescription = $projectDB->sanitize($_POST['new_project_desc']);
