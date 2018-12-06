@@ -27,7 +27,7 @@
 
    $data = null;
    if(isset($_POST['search
-    echo "<h3>In the search.</h3>"
+    echo "<h3>In the search.</h3>";
       if(isset($_POST['searchVal']) && isAlphaNumeric($_POST['searchVal']) != 0){
         $val = $projectDB->sanitize($_POST['searchVal']);
         $data = $projectDB->searchProject($val);
