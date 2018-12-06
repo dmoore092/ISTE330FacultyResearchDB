@@ -169,7 +169,9 @@
         }
 
         function displayInsertForm(){
-            $html = "<table>
+            $html = "
+                <h3>Add A New Project</h3>
+                <table>
                 <form action ='myProjects.php' method='post'>
                     <tr>
                     <td><input type='text' name='project_name' placeholder='Project Name'/></td>
