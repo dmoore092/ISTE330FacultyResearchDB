@@ -44,9 +44,9 @@ session_name("user");
     }
 
     if(isset($_POST['insertProject'])){
-      $projectName = $projectDB->sanitize($_POST['project_name']);
-      $projectLead = $projectDB->sanitize($_POST['project_lead']);
-      $projectDescription = $projectDB->sanitize($_POST['project_desc']);
+      $projectName = $projectDB->sanitize($_POST['new_project_name']);
+      $projectLead = $projectDB->sanitize($_POST['new_project_lead']);
+      $projectDescription = $projectDB->sanitize($_POST['new_project_desc']);
       
       if(strlen($projectName) > 0 && strlen($projectLead) > 0 && strlen($projectDescription) > 0){
         if(($projectDB->isAlphanumeric($projectName)) && ($projectDB->isAlphanumeric($projectLead)) && ($projectDB->isAlphanumeric($projectDescription))){
