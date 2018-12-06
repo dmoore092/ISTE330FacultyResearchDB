@@ -13,7 +13,7 @@
 
   echo "<form action='findProject.php' method='POST'> 
           <div id='search-container'>
-            <input type='text' id='search-box' name='searchVal' placeholder='Search here by Project Name'>
+            <input type='text' id='search-box' name='searchVal' placeholder='Search here by project name'>
             <input id= 'btn-search' name='search' type='submit' value='Submit'>
           </div> 
         </form>";
