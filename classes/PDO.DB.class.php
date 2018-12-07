@@ -161,7 +161,7 @@
     }
     
     function isValidEmail($value){
-        $reg = "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$";
+        $reg = "/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/";
         return preg_match($reg, $value);
     }
 
