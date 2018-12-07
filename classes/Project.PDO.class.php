@@ -109,6 +109,7 @@
 	function updateProject($updateArray){
         $id = '';
             foreach($updateArray as $key=>$val){
+                var_dump($val);
                 switch($key){
                     case "project_id": // case will be the name of the form field the user types in
                         $id = $val;
