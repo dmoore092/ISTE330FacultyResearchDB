@@ -184,8 +184,6 @@
         }
 	    
 	function searchProjects($name){
-		if($name !== ' '){
-            var_dump($name);
             try{
 			     $name = "%".$name."%";
                 	$data = array();
@@ -202,11 +200,6 @@
                 echo $e->getMessage();
                 throw new Exception("Problem searching for projects in the database.");
             }
-        }
-        else{
-            var_dump($name);
-            header("Refresh:0");
-        }
 	}
 }  
 ?>
