@@ -24,6 +24,11 @@ session_name("user");
             $updateArray['project_name'] = $projectDB->sanitize($_POST['project_name']);
           }
         }
+        if(isset($_POST['project_email'])){
+          if($projectDB->isValidEmail($_POST['project_email']) != 0){
+            $updateArray['email'] = $projectDB->sanitize($_POST['email']);
+          }
+        }
         if(isset($_POST['project_desc'])){
           if($projectDB->isAlphanumeric($_POST['project_desc']) != 0){
             $updateArray['project_desc'] = $projectDB->sanitize($_POST['project_desc']);
