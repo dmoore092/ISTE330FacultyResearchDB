@@ -140,7 +140,7 @@
                         <tr>
                             <input type='hidden' name='project_id' value='{$project->getId()}'/>
                             <td><input type='text' name='project_name' placeholder='{$project->getProjectName()}'/></td>
-                            <td><input type='text' name='project_lead' placeholder='{$project->getProjectLead()}'/></td>
+                            <td><input type='text' name='project_lead' placeholder='{$project->getProjectLead()}' disabled/></td>
                             <td><input type='text' name='email' placeholder='{$project->getEmail()}'/></td>
                             <td><input type='text' name='project_desc' placeholder='{$project->getDescription()}'/></td>
                             <td>
