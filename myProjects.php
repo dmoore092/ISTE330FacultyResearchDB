@@ -13,6 +13,7 @@ session_name("user");
     }
 
     if(isset($_POST['updateProject'])){
+      var_dump($_POST);
       $updateArray = array();
       if(isset($_POST['project_id'])){
         $updateArray['project_id'] = $_POST['project_id'];
@@ -23,17 +24,13 @@ session_name("user");
             $updateArray['project_name'] = $projectDB->sanitize($_POST['project_name']);
           }
         }
-        if(isset($_POST['project_lead'])){
-          if($projectDB->isAlphanumeric($_POST['project_lead']) != 0){
-            $updateArray['project_lead'] = $projectDB->sanitize($_POST['project_lead']);
-          }
-        }
         if(isset($_POST['project_desc'])){
           if($projectDB->isAlphanumeric($_POST['project_desc']) != 0){
             $updateArray['project_desc'] = $projectDB->sanitize($_POST['project_desc']);
           }
         }
       }
+      var_dump($updateArray);
       $projectDB->updateProject($updateArray);
     }
 
@@ -44,9 +41,10 @@ session_name("user");
     }
 
     if(isset($_POST['insertProject'])){
-      $projectName = $projectDB->sanitize($_POST['project_name']);
-      $projectLead = $projectDB->sanitize($_POST['project_lead']);
-      $projectDescription = $projectDB->sanitize($_POST['project_desc']);
+      var_dump($_POST);
+      $projectName = $projectDB->sanitize($_POST['new_project_name']);
+      $projectLead = $projectDB->sanitize($_POST['new_project_lead']);
+      $projectDescription = $projectDB->sanitize($_POST['new_project_desc']);
       
       if(strlen($projectName) > 0 && strlen($projectLead) > 0 && strlen($projectDescription) > 0){
         if(($projectDB->isAlphanumeric($projectName)) && ($projectDB->isAlphanumeric($projectLead)) && ($projectDB->isAlphanumeric($projectDescription))){

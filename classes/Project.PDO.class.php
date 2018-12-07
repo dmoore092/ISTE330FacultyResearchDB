@@ -116,9 +116,6 @@
                     case 'project_name':
                         echo $this->updateField('project', 'projectName', $val, $id);
                         break;
-                    case 'project_lead':
-                        echo $this->updateField('project', 'projectLead', $val, $id);
-                        break;
                     case 'email':
                         echo $this->updateField('project', 'email', $val, $id);
                         break;
@@ -140,7 +137,7 @@
                         <tr>
                             <input type='hidden' name='project_id' value='{$project->getId()}'/>
                             <td><input type='text' name='project_name' placeholder='{$project->getProjectName()}'/></td>
-                            <td><input type='text' name='project_lead' placeholder='{$project->getProjectLead()}'/></td>
+                            <td><input type='text' name='project_lead' placeholder='{$project->getProjectLead()}' disabled/></td>
                             <td><input type='text' name='email' placeholder='{$project->getEmail()}'/></td>
                             <td><input type='text' name='project_desc' placeholder='{$project->getDescription()}'/></td>
                             <td>
@@ -174,9 +171,9 @@
                 <table>
                 <form action ='myProjects.php' method='post'>
                     <tr>
-                    <td><input type='text' name='project_name' placeholder='Project Name'/></td>
-                    <td><input type='text' name='project_lead' placeholder='Project Lead'/></td>
-                    <td><input type='text' name='project_desc' placeholder='Project Description'/></td>
+                    <td><input type='text' name='new_project_name' placeholder='Project Name'/></td>
+                    <td><input type='text' name='new_project_lead' placeholder='Project Lead'/></td>
+                    <td><input type='text' name='new_project_desc' placeholder='Project Description'/></td>
                     <td>
                         <input type='submit' name='insertProject' value='Insert'/>
                     </td>

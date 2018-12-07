@@ -61,7 +61,7 @@
                     ":id"=>$id
                 ));
             }catch(PDOException $e){
-                return "A problem occurred updating $tableName";
+                return "<h1>A problem occurred updating $tableName</h1>";
             }
         }
 
@@ -162,6 +162,16 @@
     
     function isValidEmail($value){
         $reg = "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$";
+        return preg_match($reg, $value);
+    }
+
+    function isValidWebsite($value){
+        $reg = "/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/";
+        return preg_match($reg, $value);
+    }
+
+    function isValidPhone($value){
+        $reg = "/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/";
         return preg_match($reg, $value);
     }
 
