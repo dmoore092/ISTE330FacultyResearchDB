@@ -203,7 +203,7 @@
             }
         }
         else{
-            echo "<p>test</p>";
+            var_dump($name);
             header("Refresh:0");
         }
 	}
