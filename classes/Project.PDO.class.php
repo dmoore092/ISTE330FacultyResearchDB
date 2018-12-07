@@ -97,6 +97,7 @@
                     ":facultyId"=>$facultyID,
                     ":projectDesc"=>$projectDesc
                 ));
+                var_dump($ra);
             }catch(PDOException $e){
                 return "A problem occurred inserting a new project.";
             }
