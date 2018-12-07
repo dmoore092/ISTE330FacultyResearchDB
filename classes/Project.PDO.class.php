@@ -116,9 +116,6 @@
                     case 'project_name':
                         echo $this->updateField('project', 'projectName', $val, $id);
                         break;
-                    case 'project_lead':
-                        echo $this->updateField('project', 'projectLead', $val, $id);
-                        break;
                     case 'email':
                         echo $this->updateField('project', 'email', $val, $id);
                         break;
