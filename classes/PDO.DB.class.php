@@ -61,7 +61,7 @@
                     ":id"=>$id
                 ));
             }catch(PDOException $e){
-                return "<h1>A problem occurred updating $tableName</h1>";
+                return "<h2>A problem occurred updating $tableName</h2>";
             }
         }
 
