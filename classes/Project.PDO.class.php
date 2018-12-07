@@ -203,7 +203,7 @@
             }
         }
         else{
-            header("Location: findProject.php");
+            header("Refresh:0");
         }
 	}
 }  
