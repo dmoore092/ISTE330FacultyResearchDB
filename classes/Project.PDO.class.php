@@ -185,8 +185,8 @@
 	    
 	function searchProjects($name){
 		if($name !== " "){
-        try{
-			 $name = "%".$name."%";
+            try{
+			     $name = "%".$name."%";
                 	$data = array();
                		$stmt = $this->dbConn->prepare("SELECT DISTINCT projectName, projectDescription, name AS 'projectLead', email AS 'email' FROM project JOIN user ON project.projectLead = user.id WHERE user.role =  1 AND projectName LIKE :name"); 
                 	$stmt->bindParam(":name", $name, PDO::PARAM_STR, 150);    
@@ -196,11 +196,11 @@
                     		$data[] = $databaseProjects;
                 	}
                 	return $data;
-            	}
-            	catch(PDOException $e){
-                	echo $e->getMessage();
-                	throw new Exception("Problem searching for projects in the database.");
-            	}
+            }
+            catch(PDOException $e){
+                echo $e->getMessage();
+                throw new Exception("Problem searching for projects in the database.");
+            }
         }
         else{
             header("Location: findProject.php");
