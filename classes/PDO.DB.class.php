@@ -70,6 +70,8 @@
          * delete() - deletes any entry for any table
          */
         function delete($tableName, $id){
+		var_dump($id);
+		var_dump($tableName);
             try{
                 $query = "DELETE FROM $tableName WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
