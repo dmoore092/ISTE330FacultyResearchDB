@@ -86,15 +86,14 @@
 		/**
 		 * inertProject() - inserts a new project into the database
 		 */
-		function insertProject($projectName, $projectLead, $projectDesc, $facultyID){
+		function insertProject($projectName, $projectDesc, $facultyID){
             $ra = -1;
             try{
-                $query = "INSERT INTO project values(:facultyID,:projectName,:projectLead,:projectDesc)";
+                $query = "INSERT INTO project (projectName, projectLead, projectDescription) values(:projectName, :facultyID, :projectDesc)";
                 $stmt = $this->dbConn->prepare($query);
                 $ra = $stmt->execute(array(
-                    ":facultyID"=>$facultyID,
                     ":projectName"=>$projectName,
-                    ":projectLead"=>$projectLead,
+                    ":facultyId"=>$facultyID,
                     ":projectDesc"=>$projectDesc
                 ));
             }catch(PDOException $e){
@@ -174,7 +173,6 @@
                 <form action ='myProjects.php' method='post'>
                     <tr>
                     <td><input type='text' name='new_project_name' placeholder='Project Name'/></td>
-                    <td><input type='text' name='new_project_lead' placeholder='Project Lead'/></td>
                     <td><input type='text' name='new_project_desc' placeholder='Project Description'/></td>
                     <td>
                         <input type='submit' name='insertProject' value='Insert'/>
