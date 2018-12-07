@@ -170,5 +170,10 @@
         return preg_match($reg, $value);
     }
 
+    function isValidPhone($value){
+        $reg = "/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/";
+        return preg_match($reg, $value);
+    }
+
     } // class
 ?>
