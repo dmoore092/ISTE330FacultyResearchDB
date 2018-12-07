@@ -94,7 +94,7 @@
                 $stmt = $this->dbConn->prepare($query);
                 $ra = $stmt->execute(array(
                     ":projectName"=>$projectName,
-                    ":facultyId"=>$facultyID,
+                    ":facultyID"=>$facultyID,
                     ":projectDesc"=>$projectDesc
                 ));
                 var_dump($ra);
