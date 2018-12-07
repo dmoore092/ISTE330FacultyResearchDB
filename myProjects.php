@@ -45,30 +45,30 @@ session_name("user");
       }
     }
 
-    // if(isset($_POST['insertProject'])){
-    //   var_dump($_POST);
-    //   $projectName = $projectDB->sanitize($_POST['new_project_name']);
-    //   $projectLead = $projectDB->sanitize($_POST['new_project_lead']);
-    //   $projectDescription = $projectDB->sanitize($_POST['new_project_desc']);
+    if(isset($_POST['insertProject'])){
+      var_dump($_POST);
+      $projectName = $projectDB->sanitize($_POST['new_project_name']);
+      $projectLead = $projectDB->sanitize($_POST['new_project_lead']);
+      $projectDescription = $projectDB->sanitize($_POST['new_project_desc']);
       
-    //   if(strlen($projectName) > 0 && strlen($projectLead) > 0 && strlen($projectDescription) > 0){
-    //     if(($projectDB->isAlphanumeric($projectName)) && ($projectDB->isAlphanumeric($projectLead)) && ($projectDB->isAlphanumeric($projectDescription))){
-    //       $projectDB->insertProject($projectName, $projectLead, $projectDescription, $_SESSION['id']);
-    //     }
-    //     else{
-    //       echo "<h2>Project Name, Lead, and description all must be validly alphanumeric.</h2>";
-    //     }
-    //   }
-    //   else{
-    //     echo "<h2>All fields must be filled out in order to insert a project.</h2>";
-    //   }
-    // }
+      if(strlen($projectName) > 0 && strlen($projectLead) > 0 && strlen($projectDescription) > 0){
+        if(($projectDB->isAlphanumeric($projectName)) && ($projectDB->isAlphanumeric($projectLead)) && ($projectDB->isAlphanumeric($projectDescription))){
+          $projectDB->insertProject($projectName, $projectLead, $projectDescription, $_SESSION['id']);
+        }
+        else{
+          echo "<h2>Project Name, Lead, and description all must be validly alphanumeric.</h2>";
+        }
+      }
+      else{
+        echo "<h2>All fields must be filled out in order to insert a project.</h2>";
+      }
+    }
 
     switch($_SESSION['role']){
       case 1:
         $data = $projectDB->getProjectsByUser($_SESSION['id']);
         echo $projectDB->getProjectsAsTable(true, $data);
-        // echo $projectDB->displayInsertForm();
+        echo $projectDB->displayInsertForm();
       break;
       case 2:
         // echo "<h3 class='title'>You must be a professor to access this page.</h3><br/><a href='find.php'>Find projects.</a>";
