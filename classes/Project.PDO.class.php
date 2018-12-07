@@ -89,6 +89,7 @@
 		function insertProject($projectName, $projectDesc, $facultyID){
             $ra = -1;
             try{
+                var_dump($ra);
                 $query = "INSERT INTO project (projectName, projectLead, projectDescription) values(:projectName, :facultyID, :projectDesc)";
                 $stmt = $this->dbConn->prepare($query);
                 $ra = $stmt->execute(array(
