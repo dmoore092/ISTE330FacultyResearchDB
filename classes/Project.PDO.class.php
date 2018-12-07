@@ -203,6 +203,7 @@
             }
         }
         else{
+            echo "test";
             header("Refresh:0");
         }
 	}
