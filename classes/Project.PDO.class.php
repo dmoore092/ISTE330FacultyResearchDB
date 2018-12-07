@@ -99,7 +99,8 @@
                 ));
                 var_dump($ra);
             }catch(PDOException $e){
-                return "A problem occurred inserting a new project.";
+                var_dump($e);
+                return "<h1>A problem occurred inserting a new project.</h1>";
             }
             return $ra;
 		}
