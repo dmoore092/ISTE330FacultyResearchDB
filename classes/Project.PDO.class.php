@@ -184,7 +184,7 @@
         }
 	    
 	function searchProjects($name){
-		if(!empty($name)){
+		if($name !== ' '){
             var_dump($name);
             try{
 			     $name = "%".$name."%";
