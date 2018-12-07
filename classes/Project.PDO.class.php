@@ -94,12 +94,13 @@
                 $stmt = $this->dbConn->prepare($query);
                 $ra = $stmt->execute(array(
                     ":projectName"=>$projectName,
-                    ":facultyId"=>$facultyID,
+                    ":facultyID"=>$facultyID,
                     ":projectDesc"=>$projectDesc
                 ));
                 var_dump($ra);
             }catch(PDOException $e){
-                return "A problem occurred inserting a new project.";
+                var_dump($e);
+                return "<h1>A problem occurred inserting a new project.</h1>";
             }
             return $ra;
 		}
