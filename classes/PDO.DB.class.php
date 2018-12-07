@@ -53,6 +53,7 @@
          * updateField() - updates a column for any field for any table
          */
         function updateField($tableName, $fieldName, $value, $id){
+		echo "$tableName, $fieldName, $value, $id in the updateField function";
             try{
                 $query = "UPDATE $tableName SET $fieldName = :value WHERE id = :id";
                 $stmt = $this->dbConn->prepare($query);
