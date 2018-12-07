@@ -203,7 +203,7 @@
             }
         }
         else{
-            echo "test";
+            echo "<p>test</p>";
             header("Refresh:0");
         }
 	}
