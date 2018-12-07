@@ -184,7 +184,7 @@
         }
 	    
 	function searchProjects($name){
-		if($name !== " "){
+		if(!empty($name)){
             try{
 			     $name = "%".$name."%";
                 	$data = array();
